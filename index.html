@@ -873,7 +873,108 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   </div>
 </footer>
 
+<!-- Success Popup -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-popup">
+    <button class="success-close" id="successClose">&times;</button>
+    <div class="success-icon">&#9993;</div>
+    <h2>Check your email!</h2>
+    <p>We just sent you a confirmation. Click the link inside to unlock <strong>The Private Vault</strong> and start receiving The Invisible Letter.</p>
+    <p class="success-hint">Don't see it? Check your spam or promotions folder.</p>
+  </div>
+</div>
+
+<style>
+.success-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.success-overlay.active { display: flex; animation: fadeIn 0.3s ease; }
+.success-popup {
+  background: #fff; border-radius: 16px; padding: 48px 40px; text-align: center;
+  max-width: 420px; width: 100%; position: relative;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+  animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.success-close {
+  position: absolute; top: 16px; right: 20px; background: none; border: none;
+  font-size: 28px; color: #999; cursor: pointer; line-height: 1; padding: 0;
+  transition: color 0.2s;
+}
+.success-close:hover { color: #333; }
+.success-icon {
+  font-size: 48px; margin-bottom: 16px;
+  width: 80px; height: 80px; line-height: 80px;
+  background: var(--gold); border-radius: 50%;
+  display: inline-block; color: var(--dark-green);
+}
+.success-popup h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem; color: var(--dark-green); margin-bottom: 12px;
+}
+.success-popup p {
+  font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 8px;
+}
+.success-popup .success-hint {
+  font-size: 13px; color: #999; margin-top: 16px; margin-bottom: 0;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn { from { opacity: 0; transform: scale(0.9) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@media (max-width: 600px) {
+  .success-popup { padding: 36px 24px; }
+  .success-popup h2 { font-size: 1.5rem; }
+  .success-icon { width: 64px; height: 64px; line-height: 64px; font-size: 36px; }
+}
+</style>
+
 <script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
+
+<script>
+(function() {
+  var overlay = document.getElementById('successOverlay');
+  var closeBtn = document.getElementById('successClose');
+
+  function showPopup() {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hidePopup() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', hidePopup);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) hidePopup();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') hidePopup();
+  });
+
+  document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var emailInput = form.querySelector('input[type="email"], input[name="email_address"]');
+      if (!emailInput || !emailInput.value) return;
+
+      var formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(function() {
+        emailInput.value = '';
+        showPopup();
+      }).catch(function() {
+        emailInput.value = '';
+        showPopup();
+      });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
