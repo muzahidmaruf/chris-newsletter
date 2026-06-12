@@ -130,18 +130,24 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 
 /* ── Brands bar ── */
 .brands-bar {
-  background: var(--cream); padding: 30px 48px;
+  background: var(--dark-green); padding: 40px 48px;
   border-top: 1px solid rgba(0,0,0,0.06);
 }
-.brands-inner {
-  max-width: 900px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: center; gap: 48px;
-}
-.brands-label {
+.brands-container { max-width: 900px; margin: 0 auto; text-align: center; }
+.brands-bar .brands-label {
   font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-  color: #999; white-space: nowrap;
+  color: var(--text-muted); margin-bottom: 24px;
 }
-.brand-name { font-size: 16px; font-weight: 500; color: #444; }
+.brands-row { margin-bottom: 16px; }
+.brands-row:last-child { margin-bottom: 0; }
+.brands-row-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px; display: block;
+}
+.brands-row-items {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px 32px;
+}
+.brand-name { font-size: 15px; font-weight: 500; color: var(--text-light); }
 
 /* ── Two Economies ── */
 .two-economies {
@@ -276,6 +282,34 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 }
 .pillars-bottom strong { color: var(--gold); text-decoration: underline; text-decoration-color: var(--gold); }
 
+/* ── TEF Show ── */
+.tef-show {
+  background: var(--dark-green); padding: 80px 48px;
+}
+.tef-show-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center;
+}
+.tef-show-thumb {
+  background: linear-gradient(135deg, var(--sage), var(--gold));
+  border-radius: 12px; aspect-ratio: 16/9;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.tef-show-play {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--dark-green); color: var(--text-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; padding-left: 4px;
+}
+.tef-show-content .section-label { color: var(--gold); }
+.tef-show-content h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem; line-height: 1.2; font-weight: 400;
+  color: var(--text-light); margin-bottom: 16px;
+}
+.tef-show-content p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
+
 /* ── The House ── */
 .the-house {
   background: var(--cream); padding: 80px 48px;
@@ -287,6 +321,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   color: var(--text-dark); margin-bottom: 48px;
 }
 .house-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.house-cards.three-col { grid-template-columns: repeat(3, 1fr); }
+.house-card-sub { font-size: 13px; font-weight: 600; color: var(--forest); margin-bottom: 8px !important; }
 .house-card {
   border-radius: 16px; padding: 40px 32px; text-align: left;
 }
@@ -320,53 +356,35 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 }
 .btn-dark:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(33,58,47,0.3); }
 
-/* ── Pricing ── */
+/* ── Work With Me (Service Pillars) ── */
 .pricing {
   background: var(--cream); padding: 80px 48px;
   border-top: 1px solid rgba(0,0,0,0.06);
 }
-.pricing-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.pricing-inner { max-width: 900px; margin: 0 auto; text-align: center; }
 .pricing h2 {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.4rem; line-height: 1.2; font-weight: 400;
   color: var(--text-dark); margin-bottom: 16px;
 }
-.pricing-sub { font-size: 15px; color: #777; max-width: 550px; margin: 0 auto 48px; line-height: 1.6; }
-.pricing-table { margin-bottom: 32px; }
-.pricing-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 28px; border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 12px; margin-bottom: 12px; background: #fff;
-  text-align: left;
+.pricing-sub { font-size: 15px; color: #777; max-width: 600px; margin: 0 auto 48px; line-height: 1.6; }
+.service-pillars {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px;
 }
-.pricing-row .price {
-  font-size: 1.2rem; font-weight: 800; color: var(--forest); min-width: 80px;
+.service-pillar {
+  border: 1px solid rgba(0,0,0,0.08); border-radius: 12px;
+  padding: 32px 24px; text-align: left; background: #fff;
 }
-.pricing-row .price-info { flex: 1; margin-left: 24px; }
-.pricing-row .price-info h4 { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 2px; }
-.pricing-row .price-info p { font-size: 13px; color: #888; }
-.pricing-row .price-tier {
-  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-  color: #aaa;
-}
-.pricing-note { font-size: 14px; color: #999; font-style: italic; }
-
-/* ── Advisory ── */
-.advisory {
-  background: var(--cream); padding: 0 48px 80px;
-}
-.advisory-inner {
-  max-width: 800px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  border: 1.5px dashed rgba(33,58,47,0.2); border-radius: 16px; padding: 40px;
-}
-.advisory-content { flex: 1; }
-.advisory-content .section-label { color: var(--forest); margin-bottom: 12px; }
-.advisory-content h3 {
+.service-pillar h3 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.6rem; font-weight: 400; color: var(--text-dark); margin-bottom: 12px;
+  font-size: 1.5rem; font-weight: 400; color: var(--forest); margin-bottom: 12px;
 }
-.advisory-content p { font-size: 14px; color: #666; line-height: 1.6; max-width: 400px; }
+.service-pillar p { font-size: 14px; color: #666; line-height: 1.7; }
+.service-closer {
+  display: flex; align-items: center; justify-content: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.service-closer span { font-size: 14px; color: #999; font-style: italic; }
 .btn-outline-rounded {
   display: inline-block; padding: 14px 28px;
   border: 1.5px solid var(--dark-green); border-radius: 28px;
@@ -462,10 +480,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   .economy-cards { grid-template-columns: 1fr; }
   .get-cards { grid-template-columns: 1fr; }
   .pillar-cards { grid-template-columns: 1fr; }
-  .house-cards { grid-template-columns: 1fr; }
-  .advisory-inner { flex-direction: column; gap: 24px; text-align: center; }
-  .advisory-content p { max-width: 100%; }
-  .brands-inner { flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .house-cards, .house-cards.three-col { grid-template-columns: 1fr; }
+  .tef-show-inner { grid-template-columns: 1fr; text-align: center; }
+  .tef-show-content { text-align: left; }
+  .service-pillars { grid-template-columns: 1fr; }
+  .service-closer { flex-direction: column; gap: 16px; }
 }
 
 /* ── Responsive: Mobile ── */
@@ -500,10 +519,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   .topics-sub { font-size: 14px; }
 
   /* Brands */
-  .brands-bar { padding: 24px 20px; }
-  .brands-inner { gap: 10px 20px; }
-  .brands-label { font-size: 10px; width: 100%; text-align: center; margin-bottom: 4px; }
-  .brand-name { font-size: 14px; }
+  .brands-bar { padding: 28px 20px; }
+  .brands-row-items { gap: 8px 20px; }
+  .brands-bar .brands-label { font-size: 10px; }
+  .brands-row-label { font-size: 10px; }
+  .brand-name { font-size: 13px; }
 
   /* Two Economies */
   .two-economies { padding: 48px 20px; }
@@ -549,24 +569,21 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   .house-card p { font-size: 13px; }
   .btn-gold, .btn-dark { padding: 12px 24px; font-size: 13px; width: 100%; text-align: center; }
 
-  /* Pricing */
+  /* Work With Me */
   .pricing { padding: 48px 20px; }
   .pricing h2 { font-size: 1.6rem; }
   .pricing-sub { font-size: 14px; margin-bottom: 32px; }
-  .pricing-row { flex-direction: column; align-items: flex-start; padding: 18px 20px; gap: 6px; position: relative; }
-  .pricing-row .price { font-size: 1.1rem; min-width: auto; }
-  .pricing-row .price-info { margin-left: 0; width: 100%; }
-  .pricing-row .price-info h4 { font-size: 14px; padding-right: 70px; }
-  .pricing-row .price-info p { font-size: 12px; }
-  .pricing-row .price-tier { font-size: 10px; position: absolute; top: 18px; right: 20px; }
-  .pricing-note { font-size: 13px; }
-
-  /* Advisory */
-  .advisory { padding: 0 20px 48px; }
-  .advisory-inner { padding: 28px 24px; }
-  .advisory-content h3 { font-size: 1.3rem; }
-  .advisory-content p { font-size: 13px; }
+  .service-pillar { padding: 24px 20px; }
+  .service-pillar h3 { font-size: 1.3rem; }
+  .service-pillar p { font-size: 13px; }
+  .service-closer span { font-size: 13px; text-align: center; }
   .btn-outline-rounded { padding: 12px 24px; font-size: 13px; width: 100%; text-align: center; }
+
+  /* TEF Show */
+  .tef-show { padding: 48px 20px; }
+  .tef-show-inner { gap: 28px; }
+  .tef-show-content h2 { font-size: 1.6rem; }
+  .tef-show-content p { font-size: 14px; }
 
   /* Final CTA */
   .final-cta { padding: 48px 20px; }
@@ -593,8 +610,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   .hero-photo-wrap { max-width: 200px; }
   .economy-card .stat { font-size: 2.4rem; }
   .get-card-number { font-size: 2rem; }
-  .brands-inner { gap: 8px 16px; }
-  .brand-name { font-size: 13px; }
+  .brands-row-items { gap: 6px 14px; }
+  .brand-name { font-size: 12px; }
 }
 </style>
 </head>
@@ -620,7 +637,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
     <div class="hero-content">
       <div class="hero-label">The Invisible Letter &middot; Free Every Week</div>
       <h1 class="hero-headline">Most of how the world actually works is <span class="highlight">invisible.</span> I help you see the system.</h1>
-      <p class="hero-sub">Field notes on the invisible economy. The rooms, relationships, and timing that decide outcomes across your career, in higher ed, and in tech. One letter a week. Read it in 5 minutes.</p>
+      <p class="hero-sub">You did everything they told you to &mdash; the degree, the r&eacute;sum&eacute;, the applications &mdash; and still watched the offer, the promotion, the seat go to someone else. That's not bad luck. Most of how those decisions get made happens where you can't see it. Each week I show you that hidden part &mdash; in 5 minutes.</p>
       <form class="hero-form" action="https://app.kit.com/forms/9540956/subscriptions" method="post" data-sv-form="9540956" data-uid="9e29a68d32" data-format="inline" data-version="5">
         <input type="email" name="email_address" placeholder="Your best email" required>
         <button type="submit">Join free &rarr;</button>
@@ -650,15 +667,30 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 
 <!-- Brands Bar -->
 <section class="brands-bar">
-  <div class="brands-inner">
-    <span class="brands-label">The Work Behind the Letter</span>
-    <span class="brand-name">Brown University</span>
-    <span class="brand-name">Lincoln University</span>
-    <span class="brand-name">University of Cincinnati</span>
-    <span class="brand-name">Marshall University</span>
-    <span class="brand-name">George Mason University</span>
-    <span class="brand-name">Arizona State University</span>
-    <span class="brand-name">California State University Fullerton</span>
+  <div class="brands-container">
+    <div class="brands-label">The Work Behind the Letter</div>
+    <div class="brands-row">
+      <span class="brands-row-label">Industry</span>
+      <div class="brands-row-items">
+        <span class="brand-name">Salesforce</span>
+        <span class="brand-name">Disney</span>
+        <span class="brand-name">Netflix</span>
+        <span class="brand-name">Apple</span>
+        <span class="brand-name">The White House</span>
+      </div>
+    </div>
+    <div class="brands-row">
+      <span class="brands-row-label">Higher Education</span>
+      <div class="brands-row-items">
+        <span class="brand-name">Brown University</span>
+        <span class="brand-name">Lincoln University</span>
+        <span class="brand-name">University of Cincinnati</span>
+        <span class="brand-name">Marshall University</span>
+        <span class="brand-name">George Mason University</span>
+        <span class="brand-name">Arizona State University</span>
+        <span class="brand-name">Cal State Fullerton</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -690,10 +722,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
     <img src="./derecco-about.png" alt="Dr. DéRecco Lynch speaking" class="about-photo">
     <div class="about-content">
       <div class="section-label">A Bit About Me</div>
-      <h2>I've watched the same system run from inside three different worlds.</h2>
-      <p class="drop-cap">For 11 years I climbed the higher-ed ladder, on track to a university presidency. Then I walked away to break into Big Tech, not by applying online and waiting, but by running a gauntlet: 20 interviews, 5 roles, 6 months. It ended in a life-changing Solution Engineer role at Salesforce.</p>
-      <p>Higher ed. Career. Tech. Three different worlds, and the same hidden machinery underneath all of them. Once you see how decisions actually get made in one, you start seeing it everywhere. That pattern is the invisible economy, and learning to read it is what bought me freedom, proximity to my family, and impact at scale.</p>
-      <p>From there I led Salesforce's HBCU engagement strategy and worked alongside Disney, Netflix, Apple, and the White House. Now I write down what I learned the hard way, so you don't have to learn it 10 years too late.</p>
+      <h2>I walked away from a university presidency. What I found on the other side changed everything.</h2>
+      <p class="drop-cap">Eleven years in, I was on track to run a university. Then I gave it up &mdash; no offer in hand, no safety net &mdash; to break into Big Tech. Everyone thought I'd lost it. What happened next is the reason this letter exists.</p>
+      <p>I didn't get in by applying online and waiting. I ran a gauntlet: 20 interviews, 5 roles, 6 months of rejection &mdash; and came out with a life-changing Solution Engineer role at Salesforce. But the part that changed everything wasn't the job. It was what I noticed along the way.</p>
+      <p>Higher ed, career, tech &mdash; three different worlds running on the exact same hidden machinery. Once I could see it in one, I saw it everywhere. That pattern bought me freedom, time with my family, and impact at a scale I didn't think was possible. From there I led Salesforce's HBCU strategy and worked alongside Disney, Netflix, Apple, and the White House.</p>
+      <p>I write down what I learned the hard way, so you don't lose ten years figuring it out. The full story &mdash; and what to do with it &mdash; lives in the letter.</p>
       <a href="#final-cta" class="btn-outline">Start with the free letter &rarr;</a>
     </div>
   </div>
@@ -754,89 +787,76 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   </div>
 </section>
 
+<!-- TEF Show -->
+<section class="tef-show">
+  <div class="tef-show-inner">
+    <div class="tef-show-thumb">
+      <div class="tef-show-play">&#9654;</div>
+    </div>
+    <div class="tef-show-content">
+      <div class="section-label">The TEF Show &middot; New Episodes on YouTube</div>
+      <h2>The conversations behind the letter</h2>
+      <p>Each month I sit down with people who beat the invisible economy and got the offer, the seat, the deal. The show is where the full stories get told. The letter is where I hand you what to do with them.</p>
+      <a href="https://www.youtube.com/@theexcellencefactory" class="btn-gold" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- The House -->
 <section class="the-house">
   <div class="the-house-inner">
     <div class="section-label" style="color: var(--forest);">The Bigger World the Letter Opens Into</div>
     <h2>The letter is the front door. Here's the house.</h2>
-    <div class="house-cards">
-      <div class="house-card dark">
-        <div class="house-card-label">The TEF Show &middot; Monthly</div>
-        <h3>The conversations behind the letter</h3>
-        <p>Each month I sit down with people who navigated the invisible economy and won. The show is where the stories get told in full. The letter is where I hand you what to do with them.</p>
-        <a href="#" class="btn-gold">Watch the latest episode &rarr;</a>
+    <div class="house-cards three-col">
+      <div class="house-card light">
+        <div class="house-card-label">Digital eBook</div>
+        <h3>The Invisible Interview</h3>
+        <p class="house-card-sub">Instant download</p>
+        <p>Read it tonight. The unspoken rules of advancing your career, delivered straight to any device.</p>
+        <a href="#" class="btn-dark">Get the eBook &rarr;</a>
       </div>
       <div class="house-card light">
-        <div class="house-card-label">The Book</div>
+        <div class="house-card-label">Physical Book</div>
         <h3>The Invisible Interview</h3>
-        <p>A guide to the unspoken rules of advancing your career. What no one tells you about how decisions actually get made, and how to be the name that comes up in the room.</p>
-        <a href="#" class="btn-dark">Get the book on Amazon &rarr;</a>
+        <p class="house-card-sub">Print edition</p>
+        <p>The same playbook in print &mdash; on your shelf and in your hands. Shipped via Amazon.</p>
+        <a href="#" class="btn-dark">Order on Amazon &rarr;</a>
+      </div>
+      <div class="house-card light">
+        <div class="house-card-label">Self-Paced Course</div>
+        <h3>The Interview Companion</h3>
+        <p class="house-card-sub">On demand</p>
+        <p>Go beyond the page. The frameworks as a course you run at your own speed, whenever you need them.</p>
+        <a href="#" class="btn-outline">Start the course &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pricing -->
+<!-- Work With Me -->
 <section class="pricing">
   <div class="pricing-inner">
     <div class="section-label" style="color: var(--gold);">When You're Ready to Go Deeper</div>
     <h2>You start free. You climb when it's time.</h2>
-    <p class="pricing-sub">Most people will only ever need the letter, and that's the point. But when you want to work on your specific version of freedom, here's the path.</p>
-    <div class="pricing-table">
-      <div class="pricing-row">
-        <span class="price">Free</span>
-        <div class="price-info">
-          <h4>The Freedom Roadmap Assessment</h4>
-          <p>A short diagnostic that shows you where you actually stand. The first step for everyone.</p>
-        </div>
-        <span class="price-tier">Start Here</span>
+    <p class="pricing-sub">Most people will only ever need the letter &mdash; and that's the point. When you want to go further, here's how we work together.</p>
+    <div class="service-pillars">
+      <div class="service-pillar">
+        <h3>Career</h3>
+        <p>Personal brand, positioning, and your Freedom Map. Break in, move up, or pivot &mdash; with a system instead of luck.</p>
       </div>
-      <div class="pricing-row">
-        <span class="price">$47</span>
-        <div class="price-info">
-          <h4>The Interview Companion</h4>
-          <p>The self-paced platform. The frameworks, on demand, whenever you need them.</p>
-        </div>
-        <span class="price-tier">Self-Paced</span>
+      <div class="service-pillar">
+        <h3>Higher Ed</h3>
+        <p>Enrollment strategy, marketing, and technology for institutions in transition. For VPs, Provosts, and Cabinets. (Past: Cal State Fullerton.)</p>
       </div>
-      <div class="pricing-row">
-        <span class="price">$197</span>
-        <div class="price-info">
-          <h4>The Pivot Audit</h4>
-          <p>An async review of your situation with three clear moves for your next 90 days.</p>
-        </div>
-        <span class="price-tier">Async</span>
-      </div>
-      <div class="pricing-row">
-        <span class="price">$497</span>
-        <div class="price-info">
-          <h4>The Excellence Engineer Hour</h4>
-          <p>One hour live with me. Capped monthly so it stays real.</p>
-        </div>
-        <span class="price-tier">1:1 Live</span>
-      </div>
-      <div class="pricing-row">
-        <span class="price" style="color: var(--gold);">$2,500</span>
-        <div class="price-info">
-          <h4>The Freedom Roadmap</h4>
-          <p>A 2-hour deep dive to design your roadmap to freedom, plus a 30-day follow-up. Limited to a few engagements a month.</p>
-        </div>
-        <span class="price-tier">Premium</span>
+      <div class="service-pillar">
+        <h3>Tech</h3>
+        <p>Implementation, roadmaps, and architecture. Turn the strategy into something that actually ships.</p>
       </div>
     </div>
-    <p class="pricing-note">No pressure, ever. The letter is the letter. These are just here when you're ready.</p>
-  </div>
-</section>
-
-<!-- Advisory -->
-<section class="advisory">
-  <div class="advisory-inner">
-    <div class="advisory-content">
-      <div class="section-label">For Institutions</div>
-      <h3>higher ed advisory</h3>
-      <p>Custom enrollment strategy and cross-functional alignment for VPs, Provosts, and Cabinets navigating institutional transitions. Past engagements include Cal State Fullerton.</p>
+    <div class="service-closer">
+      <span>No pressure, ever. The letter is the letter. This is just here when you're ready.</span>
+      <a href="#" class="btn-outline-rounded">Tell me where you're stuck &rarr;</a>
     </div>
-    <a href="#" class="btn-outline-rounded">Connect to learn more &rarr;</a>
   </div>
 </section>
 
@@ -866,7 +886,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
         <a href="#">The Invisible Letter</a>
         <a href="#">The TEF Show</a>
         <a href="#">The Book</a>
-        <a href="#">LinkedIn</a>
+        <a href="https://www.youtube.com/@theexcellencefactory" target="_blank" rel="noopener">YouTube</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="footer-bottom">
