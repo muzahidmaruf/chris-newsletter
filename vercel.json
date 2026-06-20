@@ -6,6 +6,6 @@
     { "source": "/posts/:slug", "destination": "/api/posts/:slug" }
   ],
   "crons": [
-    { "path": "/api/fetch-letters", "schedule": "50 11 * * 0" }
+    { "path": "/api/fetch-letters", "schedule": "50 11 * * *" }
   ]
 }
