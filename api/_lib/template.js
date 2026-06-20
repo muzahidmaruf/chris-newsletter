@@ -55,6 +55,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .post-body li { margin-bottom: 8px; }
 .post-body pre, .post-body code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 .post-body pre { background: #1a1a1a; color: #f5f5f5; padding: 16px; border-radius: 8px; overflow-x: auto; }
+.post-body .ck-hide-in-public-posts, .post-body [class*="ck-hide-in-public"] { display: none !important; }
+.post-body img[alt="Built with Kit"] { display: none !important; }
+.post-body div[role="presentation"] { display: none !important; }
 .post-cta { background: var(--gold); padding: 48px 32px; border-radius: 16px; text-align: center; margin: 56px 0 24px; }
 .post-cta h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 700; color: var(--dark-green); margin-bottom: 8px; }
 .post-cta p { font-size: 15px; color: rgba(33,58,47,0.8); margin-bottom: 24px; }
@@ -144,9 +147,17 @@ const SUBSCRIBE_CTA = `
 </div>
 `;
 
+function scrubKitContent(html) {
+  if (!html) return '';
+  return String(html)
+    .replace(/\{\{\s*[^}]+\s*\}\}/g, '')
+    .replace(/<div class="ck-section ck-hide-in-public-posts"[\s\S]*?<\/div>\s*<\/td>/g, '</td>');
+}
+
 function renderPost({ subject, content, publishedAt, slug }) {
   const title = escapeHtml(subject);
   const dateStr = formatDate(publishedAt);
+  content = scrubKitContent(content);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>

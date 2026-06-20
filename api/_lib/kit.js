@@ -31,11 +31,16 @@ async function fetchBroadcast(id) {
 
 async function getPublishedBroadcasts() {
   const all = await fetchBroadcasts();
-  return all
-    .filter(b => b.subject && (b.published_at || b.send_at))
+  const subjects = all.filter(b => b.subject);
+  // Need full broadcast detail to know `public` flag — the list endpoint omits it.
+  const detailed = await Promise.all(subjects.map(async b => {
+    try { return await fetchBroadcast(b.id); } catch { return null; }
+  }));
+  return detailed
+    .filter(b => b && b.public === true && b.subject)
     .sort((a, b) => {
-      const aDate = new Date(a.published_at || a.send_at || a.created_at).getTime();
-      const bDate = new Date(b.published_at || b.send_at || b.created_at).getTime();
+      const aDate = new Date(a.send_at || a.published_at || a.created_at).getTime();
+      const bDate = new Date(b.send_at || b.published_at || b.created_at).getTime();
       return bDate - aDate;
     });
 }

@@ -16,8 +16,12 @@ module.exports = async (req, res) => {
     }
 
     const full = await fetchBroadcast(summary.id);
+    if (!full || full.public !== true) {
+      res.status(404).setHeader('Content-Type', 'text/html; charset=utf-8').send(renderNotFound());
+      return;
+    }
     const content = full.content || summary.content || '';
-    const publishedAt = full.published_at || summary.published_at || summary.send_at;
+    const publishedAt = full.send_at || full.published_at || summary.send_at || summary.published_at;
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
