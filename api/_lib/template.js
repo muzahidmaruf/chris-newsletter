@@ -175,7 +175,9 @@ function renderPost({ subject, content, publishedAt, slug, thumbnail }) {
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${escapeHtml(ogImage)}">
-<link rel="icon" href="/favicon.jpg">
+<link rel="icon" type="image/jpeg" href="/profile.jfif">
+<link rel="shortcut icon" type="image/jpeg" href="/profile.jfif">
+<link rel="apple-touch-icon" href="/profile.jfif">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <style>${HEAD_STYLES}</style>
 </head>
@@ -225,7 +227,9 @@ function renderIndex({ posts }) {
 <meta property="og:title" content="The Invisible Letter · All Letters">
 <meta property="og:image" content="https://derecco.com/profile.jfif">
 <meta property="og:type" content="website">
-<link rel="icon" href="/favicon.jpg">
+<link rel="icon" type="image/jpeg" href="/profile.jfif">
+<link rel="shortcut icon" type="image/jpeg" href="/profile.jfif">
+<link rel="apple-touch-icon" href="/profile.jfif">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <style>${HEAD_STYLES}</style>
 </head>
