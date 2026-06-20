@@ -7,7 +7,9 @@ module.exports = async (req, res) => {
     const posts = broadcasts.map(b => ({
       subject: b.subject,
       slug: slugify(b.subject),
-      publishedAt: b.published_at || b.send_at || b.created_at,
+      publishedAt: b.send_at || b.published_at || b.created_at,
+      thumbnail: b.thumbnail_url || null,
+      thumbnailAlt: b.thumbnail_alt || b.subject || '',
     }));
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8');

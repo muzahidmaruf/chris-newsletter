@@ -70,11 +70,14 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .posts-header { text-align: center; margin-bottom: 48px; }
 .posts-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.6rem; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
 .posts-header p { font-size: 15px; color: #666; max-width: 480px; margin: 0 auto; }
-.posts-list { display: grid; gap: 16px; }
-.post-card { display: block; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 24px 28px; text-decoration: none; color: inherit; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
-.post-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.14); }
-.post-card .post-card-date { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--forest); margin-bottom: 8px; }
-.post-card .post-card-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--text-dark); line-height: 1.3; }
+.posts-list { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.post-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+.post-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.14); }
+.post-card-thumb { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, var(--sage), var(--gold)); overflow: hidden; }
+.post-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-card-body { padding: 22px 24px 26px; }
+.post-card .post-card-date { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--forest); margin-bottom: 10px; }
+.post-card .post-card-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text-dark); line-height: 1.3; }
 .site-footer { background: var(--dark-green); padding: 40px 48px; margin-top: 60px; }
 .footer-inner { max-width: 1100px; margin: 0 auto; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
@@ -154,9 +157,10 @@ function scrubKitContent(html) {
     .replace(/<div class="ck-section ck-hide-in-public-posts"[\s\S]*?<\/div>\s*<\/td>/g, '</td>');
 }
 
-function renderPost({ subject, content, publishedAt, slug }) {
+function renderPost({ subject, content, publishedAt, slug, thumbnail }) {
   const title = escapeHtml(subject);
   const dateStr = formatDate(publishedAt);
+  const ogImage = thumbnail || 'https://derecco.com/profile.jfif';
   content = scrubKitContent(content);
   return `<!DOCTYPE html>
 <html lang="en">
@@ -167,9 +171,10 @@ function renderPost({ subject, content, publishedAt, slug }) {
 <meta name="description" content="${title} — by Dr. DéRecco Lynch.">
 <meta property="og:title" content="${title} · The Invisible Letter">
 <meta property="og:description" content="By Dr. DéRecco Lynch.">
-<meta property="og:image" content="https://derecco.com/profile.jfif">
+<meta property="og:image" content="${escapeHtml(ogImage)}">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${escapeHtml(ogImage)}">
 <link rel="icon" href="/favicon.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <style>${HEAD_STYLES}</style>
@@ -195,9 +200,16 @@ function renderIndex({ posts }) {
     const slug = p.slug;
     const title = escapeHtml(p.subject);
     const dateStr = formatDate(p.publishedAt);
+    const alt = escapeHtml(p.thumbnailAlt || p.subject || '');
+    const thumb = p.thumbnail
+      ? `<div class="post-card-thumb"><img src="${escapeHtml(p.thumbnail)}" alt="${alt}" loading="lazy"></div>`
+      : `<div class="post-card-thumb"></div>`;
     return `<a href="/posts/${slug}" class="post-card">
-      ${dateStr ? `<div class="post-card-date">${dateStr}</div>` : ''}
-      <div class="post-card-title">${title}</div>
+      ${thumb}
+      <div class="post-card-body">
+        ${dateStr ? `<div class="post-card-date">${dateStr}</div>` : ''}
+        <div class="post-card-title">${title}</div>
+      </div>
     </a>`;
   }).join('\n');
 

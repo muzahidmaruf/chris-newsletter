@@ -30,6 +30,7 @@ module.exports = async (req, res) => {
       content,
       publishedAt,
       slug: slugify(full.subject || summary.subject),
+      thumbnail: full.thumbnail_url || summary.thumbnail_url || null,
     }));
   } catch (err) {
     console.error('post render error', err);
