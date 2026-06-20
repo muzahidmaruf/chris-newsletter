@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/posts", "destination": "/api/posts" },
+    { "source": "/posts/", "destination": "/api/posts" },
+    { "source": "/posts/:slug", "destination": "/api/posts/:slug" }
+  ],
+  "crons": [
+    { "path": "/api/fetch-letters", "schedule": "0 13 * * 0" }
+  ]
+}
