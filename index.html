@@ -78,6 +78,17 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .hero-sub {
   font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 32px;
 }
+.hero-sub strong { color: var(--text-dark); font-weight: 700; }
+.hero-list {
+  list-style: none; display: inline-block; text-align: left;
+  margin: 0 0 28px; padding: 4px 0 4px 22px;
+  border-left: 3px solid var(--gold);
+}
+.hero-list li {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem; font-weight: 400; color: var(--text-dark);
+  line-height: 1.65;
+}
 .hero-form {
   display: flex; gap: 10px; max-width: 420px; margin-bottom: 14px;
 }
@@ -505,6 +516,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   .hero-label { font-size: 11px; letter-spacing: 1.5px; margin-bottom: 14px; }
   .hero-headline { font-size: 1.75rem; line-height: 1.2; margin-bottom: 16px; }
   .hero-sub { font-size: 14px; margin-bottom: 24px; }
+  .hero-list { padding-left: 16px; margin-bottom: 22px; }
+  .hero-list li { font-size: 1.05rem; line-height: 1.6; }
   .hero-form { flex-direction: column; max-width: 100%; }
   .hero-form input { font-size: 16px; padding: 14px 16px; }
   .hero-form button { width: 100%; padding: 16px; font-size: 16px; }
@@ -640,8 +653,14 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-label">The Invisible Letter &middot; Free Every Sunday</div>
-      <h1 class="hero-headline">Most of how the world actually works is <span class="highlight">invisible.</span> I help you see the system.</h1>
-      <p class="hero-sub">You did everything they told you to &mdash; the degree, the r&eacute;sum&eacute;, the applications &mdash; and still watched the offer, the promotion, the seat go to someone else. That's not bad luck. Most of how those decisions get made happens where you can't see it. Every Sunday I show you that hidden part &mdash; in 5 minutes.</p>
+      <h1 class="hero-headline">Most of what shapes your life is <span class="highlight">invisible.</span></h1>
+      <ul class="hero-list">
+        <li>The opportunities you get.</li>
+        <li>The communities you join.</li>
+        <li>The brands you trust.</li>
+        <li>The careers you build.</li>
+      </ul>
+      <p class="hero-sub">Most people never see the systems behind them. <strong>Every Sunday, I help you see them &mdash; in five minutes or less.</strong></p>
       <form class="hero-form" action="https://app.kit.com/forms/9540956/subscriptions" method="post" data-sv-form="9540956" data-uid="9e29a68d32" data-format="inline" data-version="5">
         <input type="email" name="email_address" placeholder="Your best email" required>
         <button type="submit">Join free &rarr;</button>
