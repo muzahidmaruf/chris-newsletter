@@ -34,10 +34,17 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .navbar-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .navbar-logo img { height: 28px; }
 .navbar-logo span { color: var(--text-light); font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
+.navbar-right { display: flex; align-items: center; gap: 32px; }
 .navbar-links { display: flex; align-items: center; gap: 32px; }
 .navbar-links a { color: var(--text-light); text-decoration: none; font-size: 14px; font-weight: 500; opacity: 0.85; transition: opacity 0.2s; }
 .navbar-links a:hover { opacity: 1; }
-.navbar-links a.navbar-cta { background-color: var(--cream); color: #213A2F; opacity: 1; padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 600; }
+.navbar-cta { background-color: var(--cream); color: #213A2F; opacity: 1; padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.navbar-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; margin-left: 4px; }
+.navbar-toggle span { display: block; width: 22px; height: 2px; background-color: var(--text-light); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+.navbar-toggle span + span { margin-top: 5px; }
+.navbar-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar-toggle.open span:nth-child(2) { opacity: 0; }
+.navbar-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .post-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 60px; }
 .post-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--forest); margin-bottom: 16px; }
 .post-title { font-family: 'Playfair Display', Georgia, serif; font-size: 2.6rem; line-height: 1.2; font-weight: 700; color: var(--text-dark); margin-bottom: 18px; }
@@ -87,10 +94,14 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
 .footer-bottom { font-size: 13px; color: var(--text-muted); border-top: 1px solid rgba(245,242,232,0.1); padding-top: 20px; }
 @media (max-width: 600px) {
-  .navbar { padding: 12px 16px; }
-  .navbar-links { gap: 0; }
-  .navbar-links a:not(.navbar-cta) { display: none; }
-  .navbar-links a.navbar-cta { font-size: 12px; padding: 8px 16px; }
+  .navbar { padding: 12px 16px; position: relative; }
+  .navbar-toggle { display: block; }
+  .navbar-right { gap: 12px; }
+  .navbar-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background-color: var(--dark-green); padding: 8px 16px 16px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.25s; }
+  .navbar-links.open { max-height: 400px; opacity: 1; visibility: visible; }
+  .navbar-links a { padding: 14px 4px; font-size: 15px; opacity: 1; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .navbar-links a:last-child { border-bottom: none; }
+  .navbar-cta { font-size: 12px; padding: 8px 16px; }
   .post-wrap { padding: 40px 20px 40px; }
   .post-title { font-size: 1.8rem; }
   .post-body { font-size: 16px; }
@@ -109,14 +120,41 @@ const NAVBAR = `
     <img src="/logo.png" alt="The Excellence Factory">
     <span>The Excellence Factory</span>
   </a>
-  <div class="navbar-links">
-    <a href="/posts">Letters</a>
-    <a href="/#the-show">The Show</a>
-    <a href="/#the-book">The Book</a>
-    <a href="/#work-with-me">Work With Me</a>
+  <div class="navbar-right">
+    <div class="navbar-links" id="navbarLinks">
+      <a href="/posts">Letters</a>
+      <a href="/#the-show">The Show</a>
+      <a href="/#the-book">The Book</a>
+      <a href="/#work-with-me">Work With Me</a>
+    </div>
     <a href="/#hero" class="navbar-cta">Get The Letter</a>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbarLinks">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+`;
+
+const NAV_SCRIPT = `
+<script>
+(function() {
+  var toggle = document.getElementById('navbarToggle');
+  var links = document.getElementById('navbarLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function() {
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
 `;
 
 const FOOTER = `
@@ -192,6 +230,7 @@ ${NAVBAR}
   <a href="/posts" class="back-link">&larr; All letters</a>
 </article>
 ${FOOTER}
+${NAV_SCRIPT}
 <script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
 </body>
 </html>`;
@@ -243,6 +282,7 @@ ${NAVBAR}
   <div class="posts-list">${posts.length ? cards : empty}</div>
 </section>
 ${FOOTER}
+${NAV_SCRIPT}
 </body>
 </html>`;
 }
@@ -263,6 +303,7 @@ ${NAVBAR}
   <a href="/posts" class="back-link">&larr; All letters</a>
 </div>
 ${FOOTER}
+${NAV_SCRIPT}
 </body>
 </html>`;
 }
