@@ -3,7 +3,8 @@
   "rewrites": [
     { "source": "/posts", "destination": "/api/posts" },
     { "source": "/posts/", "destination": "/api/posts" },
-    { "source": "/posts/:slug", "destination": "/api/posts/:slug" }
+    { "source": "/posts/:slug", "destination": "/api/posts/:slug" },
+    { "source": "/playbook", "destination": "/playbook.html" }
   ],
   "crons": [
     { "path": "/api/fetch-letters", "schedule": "50 11 * * *" }
