@@ -381,20 +381,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
       </ul>
 
       <div class="lead-form-wrap">
-        <!-- Kit (ConvertKit) form — Small Shifts playbook signup (form 9690257) -->
-        <form class="lead-form" action="https://app.kit.com/forms/9690257/subscriptions" method="post" data-sv-form="9690257" data-uid="18e0cdf637" data-format="inline" data-version="5">
-          <input type="email" name="email_address" placeholder="Your best email" aria-label="Email address" required>
-          <button type="submit">Send me the playbook &rarr;</button>
-        </form>
+        <!-- Kit (ConvertKit) managed embed — form 9690257. Kit renders the form and handles submit, its spam Guard, and the after-signup redirect configured in Kit. -->
+        <script async data-uid="18e0cdf637" src="https://derecco.kit.com/18e0cdf637/index.js"></script>
         <p class="lead-privacy"><strong>Free instant download.</strong> You'll also get The Invisible Letter every Sunday. Unsubscribe anytime.</p>
-
-        <!-- Revealed after signup -->
-        <div class="lead-success" role="status" aria-live="polite">
-          <span class="lead-success-badge">&#10003; You're in</span>
-          <h3>Your playbook is ready.</h3>
-          <p>We've emailed you a copy too &mdash; and you're now on The Invisible Letter, free every Sunday. Check your inbox to confirm.</p>
-          <a class="download-btn" href="/small-shifts-real-results.pdf" download>&#8595;&nbsp; Download the Playbook (PDF)</a>
-        </div>
       </div>
 
       <div class="hero-trust">
@@ -548,17 +537,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
     <h2>Get the playbook. Run one move for 30 days.</h2>
     <p>Don't adopt all eight at once. Pick one. This playbook shows you which one &mdash; and exactly how to start.</p>
     <div class="lead-form-wrap">
-      <form class="lead-form" action="https://app.kit.com/forms/9690257/subscriptions" method="post" data-sv-form="9690257" data-uid="18e0cdf637" data-format="inline" data-version="5">
-        <input type="email" name="email_address" placeholder="Your best email" aria-label="Email address" required>
-        <button type="submit">Send me the playbook &rarr;</button>
-      </form>
+      <!-- Kit (ConvertKit) managed embed — form 9690257 -->
+      <script async data-uid="18e0cdf637" src="https://derecco.kit.com/18e0cdf637/index.js"></script>
       <p class="lead-privacy"><strong>Free instant download.</strong> Plus The Invisible Letter every Sunday. Unsubscribe anytime.</p>
-      <div class="lead-success" role="status" aria-live="polite">
-        <span class="lead-success-badge">&#10003; You're in</span>
-        <h3>Your playbook is ready.</h3>
-        <p>We've emailed you a copy too &mdash; and you're now on The Invisible Letter. Check your inbox to confirm.</p>
-        <a class="download-btn" href="/small-shifts-real-results.pdf" download>&#8595;&nbsp; Download the Playbook (PDF)</a>
-      </div>
     </div>
   </div>
 </section>
@@ -583,43 +564,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   </div>
 </footer>
 
-<script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
-<script>
-(function() {
-  // Where new subscribers land after signup (the playbook on Google Drive).
-  var REDIRECT_URL = 'https://drive.google.com/file/d/1d598ZrLZt9iRt4KNM1UktXjzjFVJjK6h/view?usp=drive_link';
-
-  document.querySelectorAll('.lead-form').forEach(function(form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var emailInput = form.querySelector('input[type="email"], input[name="email_address"]');
-      if (!emailInput || !emailInput.value) return;
-
-      var btn = form.querySelector('button');
-      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-
-      var done = false;
-      function go() {
-        if (done) return;
-        done = true;
-        window.location.href = REDIRECT_URL;
-      }
-
-      // Subscribe to Kit, THEN redirect. keepalive lets the POST finish even
-      // after we navigate away, so the redirect can never cancel the signup,
-      // and a proper (non-opaque) CORS request means Kit actually records it.
-      fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form),
-        keepalive: true
-      }).then(go).catch(go);
-      // Fallback if the request stalls (keepalive keeps the POST alive).
-      setTimeout(go, 3000);
-    });
-  });
-})();
-</script>
+<!-- Kit forms are handled by the per-form managed embeds (index.js) placed inline above.
+     Kit renders each form, passes its own spam Guard, and runs the after-signup redirect set in Kit. -->
 
 </body>
 </html>
