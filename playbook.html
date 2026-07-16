@@ -54,8 +54,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 /* ── Hero ── */
 .hero { background-color: var(--cream); padding: 72px 48px 60px; }
 .hero-inner {
-  max-width: 1120px; margin: 0 auto;
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
+  max-width: 1264px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
 }
 .hero-label {
   display: inline-block;
@@ -126,7 +126,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 /* Cover visual */
 .hero-cover-wrap { display: flex; justify-content: center; position: relative; }
 .hero-cover {
-  width: 100%; max-width: 400px;
+  width: 100%; max-width: 600px;
   filter: drop-shadow(0 24px 40px rgba(33,58,47,0.30));
   transition: transform 0.4s ease;
 }
@@ -284,7 +284,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 48px; }
   .hero-cover-wrap { order: -1; }
-  .hero-cover { max-width: 320px; transform: none; }
+  .hero-cover { max-width: 480px; transform: none; }
   .hero-cover:hover { transform: none; }
   .lead-form-wrap { max-width: 100%; }
   .loss-cards { grid-template-columns: 1fr; }
@@ -310,7 +310,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   .lead-form { flex-direction: column; }
   .lead-form input { font-size: 16px; }
   .lead-form button { width: 100%; padding: 16px; font-size: 16px; }
-  .hero-cover { max-width: 260px; }
+  .hero-cover { max-width: 390px; }
 
   .why { padding: 52px 20px; }
   .why h2 { font-size: 1.7rem; }
