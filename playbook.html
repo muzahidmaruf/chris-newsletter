@@ -126,13 +126,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 /* Cover visual */
 .hero-cover-wrap { display: flex; justify-content: center; position: relative; }
 .hero-cover {
-  width: 100%; max-width: 400px; border-radius: 10px;
-  box-shadow: 0 30px 60px rgba(33,58,47,0.28), 0 6px 16px rgba(0,0,0,0.12);
-  transform: perspective(1400px) rotateY(-7deg) rotateX(1.5deg);
+  width: 100%; max-width: 400px;
+  filter: drop-shadow(0 24px 40px rgba(33,58,47,0.30));
   transition: transform 0.4s ease;
-  border: 1px solid rgba(0,0,0,0.06);
 }
-.hero-cover:hover { transform: perspective(1400px) rotateY(-2deg) rotateX(0.5deg); }
+.hero-cover:hover { transform: translateY(-6px) scale(1.02); }
 .hero-cover-tag {
   position: absolute; bottom: -16px; right: 8px;
   background: var(--dark-green); color: var(--gold);
@@ -399,7 +397,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
     </div>
 
     <div class="hero-cover-wrap">
-      <img src="/playbook-cover.png" alt="Cover of Small Shifts, Real Results — an operating playbook for higher ed by Dr. DéRecco Lynch and Brian Harris" class="hero-cover">
+      <img src="/hero-book.png" alt="Small Shifts, Real Results — a 3D hardcover of the higher-ed operating playbook by Dr. DéRecco Lynch and Brian Harris" class="hero-cover">
       <span class="hero-cover-tag">15-page PDF</span>
     </div>
   </div>
