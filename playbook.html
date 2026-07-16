@@ -605,13 +605,17 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
         window.location.href = REDIRECT_URL;
       }
 
-      // Subscribe to Kit, then redirect to the playbook. Redirect even if the
-      // opaque (no-cors) request errors, with a timeout fallback so a slow
-      // network never traps the subscriber on the form.
-      setTimeout(go, 2500);
-      fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-        .then(go)
-        .catch(go);
+      // Subscribe to Kit, THEN redirect. keepalive lets the POST finish even
+      // after we navigate away, so the redirect can never cancel the signup,
+      // and a proper (non-opaque) CORS request means Kit actually records it.
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+        keepalive: true
+      }).then(go).catch(go);
+      // Fallback if the request stalls (keepalive keeps the POST alive).
+      setTimeout(go, 3000);
     });
   });
 })();
