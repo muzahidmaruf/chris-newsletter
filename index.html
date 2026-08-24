@@ -103,13 +103,15 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
   line-height: 1.65;
 }
 .hero-form {
-  display: flex; gap: 10px; max-width: 420px; margin-bottom: 14px;
+  display: flex; flex-wrap: wrap; gap: 10px; max-width: 520px; margin-bottom: 14px;
 }
 .hero-form input {
   flex: 1; padding: 14px 16px; border: 1px solid #ddd; border-radius: 8px;
   font-size: 15px; font-family: inherit; outline: none; transition: border-color 0.2s;
 }
 .hero-form input:focus { border-color: var(--dark-green); }
+.hero-form input[type="text"] { min-width: 130px; }
+.hero-form input[type="email"] { min-width: 170px; }
 .hero-form button {
   padding: 14px 24px; background: var(--dark-green); color: #fff;
   border: none; border-radius: 24px; font-size: 15px; font-weight: 600;
@@ -695,6 +697,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
       </ul>
       <p class="hero-sub">Most people never see the systems behind them. <strong>Every Sunday, I help you see them &mdash; in five minutes or less.</strong></p>
       <form class="hero-form" action="https://app.kit.com/forms/9540956/subscriptions" method="post" data-sv-form="9540956" data-uid="9e29a68d32" data-format="inline" data-version="5">
+        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name">
         <input type="email" name="email_address" placeholder="Your best email" required>
         <button type="submit">Join free &rarr;</button>
       </form>
@@ -1059,6 +1062,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
       e.preventDefault();
       var emailInput = form.querySelector('input[type="email"], input[name="email_address"]');
       if (!emailInput || !emailInput.value) return;
+      var nameInput = form.querySelector('input[name="fields[first_name]"]');
 
       var formData = new FormData(form);
       fetch(form.action, {
@@ -1067,9 +1071,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
         mode: 'no-cors'
       }).then(function() {
         emailInput.value = '';
+        if (nameInput) nameInput.value = '';
         showPopup();
       }).catch(function() {
         emailInput.value = '';
+        if (nameInput) nameInput.value = '';
         showPopup();
       });
     });
