@@ -3,1081 +3,1113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Subscribe to The Invisible Letter by Dr. DeRecco Lynch</title>
-<meta content="Dr. DéRecco Lynch's free weekly newsletter. Field notes on the invisible economy. The rooms, relationships, and timing that decide outcomes across your career, in higher ed, and in tech." name="description">
-<meta content="Subscribe to The Invisible Letter by Dr. DeRecco Lynch" property="og:title">
-<meta content="Field notes on the invisible economy. The rooms, relationships, and timing that decide outcomes across your career, in higher ed, and in tech. One letter a week. Read it in 5 minutes." property="og:description">
-<meta property="og:image" content="https://derecco.com/profile.jfif">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#213A2F">
+<title>The Invisible Letter by Dr. DéRecco Lynch</title>
+<meta name="description" content="Most of what shapes your life happens where you can't see it. Every Sunday, Dr. DéRecco Lynch sends a five-minute letter about the invisible economy — the rooms, relationships, and timing that decide outcomes across career, higher ed, and tech.">
+<link rel="canonical" href="https://derecco.com/">
+
 <meta property="og:type" content="website">
-<meta content="summary_large_image" name="twitter:card">
-<meta content="https://derecco.com/profile.jfif" name="twitter:image">
-<link rel="icon" type="image/jpeg" href="/profile.jfif">
-<link rel="shortcut icon" type="image/jpeg" href="/profile.jfif">
-<link rel="apple-touch-icon" href="/profile.jfif">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<meta property="og:site_name" content="The Excellence Factory">
+<meta property="og:url" content="https://derecco.com/">
+<meta property="og:title" content="The Invisible Letter by Dr. DéRecco Lynch">
+<meta property="og:description" content="There are two economies. You were only taught one. Every Sunday, a five-minute letter on the invisible one — across career, higher ed, and tech.">
+<meta property="og:image" content="https://derecco.com/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dr. DéRecco Lynch — Most of what shapes your life is invisible.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Invisible Letter by Dr. DéRecco Lynch">
+<meta name="twitter:description" content="There are two economies. You were only taught one. A five-minute letter every Sunday.">
+<meta name="twitter:image" content="https://derecco.com/assets/og-card.jpg">
+
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root{
+  --dark-green:#213A2F;
+  --cream:#F5F2E8;
+  --gold:#FCC759;
+  --gold-deep:#8A5F10;
+  --forest:#005419;
+  --sage:#619483;
+  --sage-deep:#3F6B5A;
+  --tan:#EDE7D6;
+  --text-dark:#1a1a1a;
+  --text-light:#F5F2E8;
+  --text-muted:rgba(245,242,232,.72);
+  --body:#3a463f;
+  --muted-ink:#5c665f;
+  --rule:rgba(33,58,47,.13);
+  --nav-h:72px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--cream);color:var(--text-dark);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;overflow-x:clip;
+}
+/* fine paper grain, so the cream never reads as flat */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+}
+.wrap{max-width:1140px;margin:0 auto;padding:0 34px;position:relative;z-index:2}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;line-height:1.1;letter-spacing:-.018em}
+img{max-width:100%}
+section[id],header[id]{scroll-margin-top:calc(var(--nav-h) + 18px)}
 
-:root {
-  --dark-green: #213A2F;
-  --cream: #F5F2E8;
-  --gold: #FCC759;
-  --forest: #005419;
-  --sage: #619483;
-  --text-dark: #1a1a1a;
-  --text-light: #F5F2E8;
-  --text-muted: rgba(245, 242, 232, 0.7);
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--gold);color:var(--dark-green);padding:12px 20px;
+  border-radius:0 0 10px 0;font-weight:700;text-decoration:none;
 }
-
-html { font-size: 16px; scroll-behavior: smooth; }
-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); background-color: var(--cream); line-height: 1.6; }
-
-/* ── Navbar ── */
-.navbar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 48px;
-  background-color: var(--dark-green);
-  position: sticky; top: 0; z-index: 100;
-}
-.navbar-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.navbar-logo img { height: 28px; }
-.navbar-logo span { color: var(--text-light); font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
-.navbar-right { display: flex; align-items: center; gap: 32px; }
-.navbar-links { display: flex; align-items: center; gap: 32px; }
-.navbar-links a { color: var(--text-light); text-decoration: none; font-size: 14px; font-weight: 500; opacity: 0.85; transition: opacity 0.2s; }
-.navbar-links a:hover { opacity: 1; }
-.navbar-cta {
-  background-color: var(--cream); color: #213A2F; opacity: 1;
-  padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 600;
-  text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
-}
-.navbar-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-.navbar-toggle {
-  display: none; background: none; border: none; cursor: pointer;
-  padding: 6px; margin-left: 4px;
-}
-.navbar-toggle span {
-  display: block; width: 22px; height: 2px; background-color: var(--text-light);
-  border-radius: 2px; transition: transform 0.25s, opacity 0.25s;
-}
-.navbar-toggle span + span { margin-top: 5px; }
-.navbar-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.navbar-toggle.open span:nth-child(2) { opacity: 0; }
-.navbar-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── Hero ── */
-.hero {
-  background-color: var(--cream);
-  padding: 80px 48px 60px;
-}
-.hero-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-}
-.hero-label {
-  font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--forest);
-  margin-bottom: 20px;
-}
-.hero-headline {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 3rem; line-height: 1.15; font-weight: 700; color: var(--text-dark);
-  margin-bottom: 24px;
-}
-.hero-headline .highlight {
-  text-decoration: underline; text-decoration-color: var(--gold);
-  text-underline-offset: 4px; text-decoration-thickness: 3px;
-}
-.hero-sub {
-  font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 32px;
-}
-.hero-sub strong { color: var(--text-dark); font-weight: 700; }
-.hero-list {
-  list-style: none; display: inline-block; text-align: left;
-  margin: 0 0 28px; padding: 4px 0 4px 22px;
-  border-left: 3px solid var(--gold);
-}
-.hero-list li {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.3rem; font-weight: 400; color: var(--text-dark);
-  line-height: 1.65;
-}
-.hero-form {
-  display: flex; flex-wrap: wrap; gap: 10px; max-width: 520px; margin-bottom: 14px;
-}
-.hero-form input {
-  flex: 1; padding: 14px 16px; border: 1px solid #ddd; border-radius: 8px;
-  font-size: 15px; font-family: inherit; outline: none; transition: border-color 0.2s;
-}
-.hero-form input:focus { border-color: var(--dark-green); }
-.hero-form input[type="text"] { min-width: 130px; }
-.hero-form input[type="email"] { min-width: 170px; }
-.hero-form button {
-  padding: 14px 24px; background: var(--dark-green); color: #fff;
-  border: none; border-radius: 24px; font-size: 15px; font-weight: 600;
-  cursor: pointer; white-space: nowrap; transition: transform 0.2s, background 0.2s;
-  font-family: inherit;
-}
-.hero-form button:hover { background: #1a2f25; transform: translateY(-1px); }
-.hero-badge {
-  display: inline-block; border: 1.5px solid var(--dark-green); border-radius: 20px;
-  padding: 4px 14px; font-size: 13px; font-weight: 600; color: var(--dark-green);
-  margin-bottom: 8px;
-}
-.hero-privacy { font-size: 13px; color: #888; }
-.hero-photo-wrap { position: relative; }
-.hero-photo {
-  width: 100%; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;
-  background: #d4cfc4;
-}
-.hero-photo-caption {
-  position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
-  background: var(--dark-green); color: var(--text-light);
-  padding: 14px 24px; border-radius: 10px;
-  font-size: 14px; font-weight: 600; line-height: 1.4;
-  white-space: nowrap; text-align: center;
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:4px}
+.on-dark :focus-visible,nav :focus-visible{outline-color:var(--gold)}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
 }
 
-/* ── Topics bar ── */
-.topics-bar {
-  background: var(--cream); padding: 40px 48px;
-  text-align: center; border-top: 1px solid rgba(0,0,0,0.06);
+/* the phrase the whole brand hangs on */
+.ie{
+  font-weight:700;padding:0 .06em;
+  background-image:linear-gradient(rgba(252,199,89,.6),rgba(252,199,89,.6));
+  background-size:100% .36em;background-position:0 86%;background-repeat:no-repeat;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
-.topics-bar-inner { max-width: 700px; margin: 0 auto; }
-.topics-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-  color: #555; margin-bottom: 16px;
-}
-.topic-tags { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
-.topic-tag {
-  border: 1.5px solid var(--dark-green); border-radius: 24px;
-  padding: 8px 20px; font-size: 14px; font-weight: 700; color: var(--dark-green);
-  text-transform: capitalize;
-}
-.topics-sub { font-size: 15px; color: #555; }
-.topics-sub strong { color: var(--text-dark); }
-
-/* ── Brands bar ── */
-.brands-bar {
-  background: var(--dark-green); padding: 40px 48px;
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-.brands-container { max-width: 900px; margin: 0 auto; text-align: center; }
-.brands-bar .brands-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--text-muted); margin-bottom: 24px;
-}
-.brands-row { margin-bottom: 16px; }
-.brands-row:last-child { margin-bottom: 0; }
-.brands-row-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 10px; display: block;
-}
-.brands-row-items {
-  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px 32px;
-}
-.brand-name { font-size: 15px; font-weight: 500; color: var(--text-light); }
-
-/* ── Two Economies ── */
-.two-economies {
-  background: var(--dark-green); padding: 80px 48px;
-  background-image: url("https://cdn.prod.website-files.com/662e77cc229a74f971daff01/662f7d3e9ebe7e76e480c172_bg-dots.svg");
-  background-position: center; background-size: cover;
-}
-.two-economies-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-.section-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 20px;
-}
-.two-economies h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.5rem; line-height: 1.2; font-weight: 400;
-  color: var(--text-light); margin-bottom: 24px;
-}
-.two-economies-sub {
-  font-size: 16px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px;
-  line-height: 1.7;
-}
-.economy-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
-.economy-card {
-  background: rgba(245,242,232,0.08); border: 1px solid rgba(245,242,232,0.12);
-  border-radius: 12px; padding: 32px; text-align: left;
-}
-.economy-card .stat {
-  font-size: 3.5rem; font-weight: 800; margin-bottom: 8px;
-}
-.economy-card .stat.gold { color: var(--gold); }
-.economy-card .stat.green { color: var(--sage); }
-.economy-card h3 { font-size: 16px; font-weight: 700; color: var(--text-light); margin-bottom: 12px; }
-.economy-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-.two-economies-bottom {
-  font-size: 17px; color: var(--text-light); font-weight: 400;
-}
-.two-economies-bottom strong { color: var(--gold); }
-
-/* ── About ── */
-.about-section {
-  background: var(--cream); padding: 80px 48px;
-}
-.about-inner {
-  max-width: 1000px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: start;
-}
-.about-photo {
-  width: 100%; border-radius: 12px; aspect-ratio: 3/4; object-fit: cover;
-  background: #d4cfc4;
-}
-.about-content .section-label { color: var(--forest); }
-.about-content h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.2rem; line-height: 1.2; font-weight: 400;
-  color: var(--text-dark); margin-bottom: 24px;
-}
-.about-content h2::first-letter { font-size: 110%; }
-.about-content p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 16px; }
-.about-content .drop-cap::first-letter {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 3.5rem; float: left; line-height: 1; margin-right: 8px; margin-top: 4px;
-  color: var(--dark-green); font-weight: 700;
-}
-.btn-outline {
-  display: inline-block; margin-top: 16px; padding: 14px 28px;
-  border: 1.5px solid var(--dark-green); border-radius: 28px;
-  color: var(--dark-green); font-size: 15px; font-weight: 600;
-  text-decoration: none; transition: all 0.2s;
-}
-.btn-outline:hover { background: var(--dark-green); color: var(--text-light); }
-
-/* ── What You Get ── */
-.what-you-get {
-  background: var(--cream); padding: 80px 48px;
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-.what-you-get-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
-.what-you-get h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4rem; line-height: 1.2; font-weight: 400;
-  color: var(--text-dark); margin-bottom: 16px;
-}
-.what-you-get > .what-you-get-inner > p {
-  font-size: 15px; color: #777; max-width: 550px; margin: 0 auto 48px; line-height: 1.6;
-}
-.wyg-sub { font-size: 15px; color: #777; max-width: 550px; margin: 0 auto 48px; line-height: 1.6; }
-.get-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.get-card {
-  background: rgba(33,58,47,0.04); border: 1px solid rgba(33,58,47,0.08);
-  border-radius: 12px; padding: 32px 24px; text-align: left; position: relative;
-}
-.get-card-number {
-  position: absolute; top: 24px; right: 24px;
-  font-size: 3rem; font-weight: 800; color: rgba(33,58,47,0.08);
-}
-.get-card-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 12px;
-}
-.get-card h3 { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
-.get-card p { font-size: 14px; color: #666; line-height: 1.6; }
-
-/* ── Three Pillars ── */
-.pillars {
-  background: var(--dark-green); padding: 80px 48px;
-  background-image: url("https://cdn.prod.website-files.com/662e77cc229a74f971daff01/662f7d3e9ebe7e76e480c172_bg-dots.svg");
-  background-position: center; background-size: cover;
-}
-.pillars-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
-.pillars h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4rem; line-height: 1.2; font-weight: 400;
-  color: var(--text-light); margin-bottom: 48px;
-}
-.pillar-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
-.pillar-card {
-  background: rgba(245,242,232,0.06); border: 1px solid rgba(245,242,232,0.1);
-  border-radius: 12px; padding: 32px 24px; text-align: left;
-}
-.pillar-card .pillar-num {
-  font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 14px;
-}
-.pillar-card h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.4rem; font-weight: 400; color: var(--text-light); margin-bottom: 14px;
-  line-height: 1.3;
-}
-.pillar-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-.pillars-bottom {
-  font-size: 16px; color: var(--text-light);
-}
-.pillars-bottom strong { color: var(--gold); text-decoration: underline; text-decoration-color: var(--gold); }
-
-/* ── TEF Show ── */
-.tef-show {
-  background: var(--dark-green); padding: 80px 48px;
-}
-.tef-show-inner {
-  max-width: 1000px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center;
-}
-.tef-show-thumb {
-  background: linear-gradient(135deg, var(--sage), var(--gold));
-  border-radius: 12px; aspect-ratio: 16/9;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.tef-show-play {
-  width: 64px; height: 64px; border-radius: 50%;
-  background: var(--dark-green); color: var(--text-light);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px; padding-left: 4px;
-}
-.tef-show-content .section-label { color: var(--gold); }
-.tef-show-content h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.2rem; line-height: 1.2; font-weight: 400;
-  color: var(--text-light); margin-bottom: 16px;
-}
-.tef-show-content p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
-
-/* ── The House ── */
-.the-house {
-  background: var(--cream); padding: 80px 48px;
-}
-.the-house-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-.the-house h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4rem; line-height: 1.2; font-weight: 400;
-  color: var(--text-dark); margin-bottom: 48px;
-}
-.house-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.house-cards.three-col { grid-template-columns: repeat(3, 1fr); }
-.house-card-sub { font-size: 13px; font-weight: 600; color: var(--forest); margin-bottom: 8px !important; }
-.house-card {
-  border-radius: 16px; padding: 40px 32px; text-align: left;
-}
-.house-card.dark { background: var(--dark-green); color: var(--text-light); }
-.house-card.light { background: rgba(33,58,47,0.05); color: var(--text-dark); }
-.house-card-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.house-card.dark .house-card-label { color: var(--gold); }
-.house-card.light .house-card-label { color: #888; }
-.house-card h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.5rem; font-weight: 400; margin-bottom: 16px; line-height: 1.3;
-}
-.house-card p { font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
-.house-card.dark p { color: var(--text-muted); }
-.house-card.light p { color: #666; }
-.btn-gold {
-  display: inline-block; padding: 14px 28px;
-  background: var(--gold); color: var(--dark-green);
-  border-radius: 28px; font-size: 14px; font-weight: 700;
-  text-decoration: none; transition: all 0.2s;
-}
-.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(252,199,89,0.4); }
-.btn-dark {
-  display: inline-block; padding: 14px 28px;
-  background: var(--dark-green); color: var(--text-light);
-  border-radius: 28px; font-size: 14px; font-weight: 700;
-  text-decoration: none; transition: all 0.2s;
-}
-.btn-dark:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(33,58,47,0.3); }
-
-/* ── Work With Me (Service Pillars) ── */
-.pricing {
-  background: var(--cream); padding: 80px 48px;
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-.pricing-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-.pricing h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4rem; line-height: 1.2; font-weight: 400;
-  color: var(--text-dark); margin-bottom: 16px;
-}
-.pricing-sub { font-size: 15px; color: #777; max-width: 600px; margin: 0 auto 48px; line-height: 1.6; }
-.service-pillars {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px;
-}
-.service-pillar {
-  border: 1px solid rgba(0,0,0,0.08); border-radius: 12px;
-  padding: 32px 24px; text-align: left; background: #fff;
-}
-.service-pillar h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.5rem; font-weight: 400; color: var(--forest); margin-bottom: 12px;
-}
-.service-pillar p { font-size: 14px; color: #666; line-height: 1.7; }
-.service-closer {
-  display: flex; align-items: center; justify-content: center; gap: 24px;
-  flex-wrap: wrap;
-}
-.service-closer span { font-size: 14px; color: #999; font-style: italic; }
-.btn-outline-rounded {
-  display: inline-block; padding: 14px 28px;
-  border: 1.5px solid var(--dark-green); border-radius: 28px;
-  color: var(--dark-green); font-size: 14px; font-weight: 600;
-  text-decoration: none; transition: all 0.2s; white-space: nowrap;
-}
-.btn-outline-rounded:hover { background: var(--dark-green); color: var(--text-light); }
-
-/* ── Final CTA ── */
-.final-cta {
-  background: var(--gold); padding: 80px 48px; text-align: center;
-}
-.final-cta-inner { max-width: 600px; margin: 0 auto; }
-.final-cta .section-label { color: var(--dark-green); margin-bottom: 20px; }
-.final-cta h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.6rem; line-height: 1.15; font-weight: 400;
-  color: var(--dark-green); margin-bottom: 16px;
-}
-.final-cta p { font-size: 15px; color: rgba(33,58,47,0.7); margin-bottom: 32px; }
-.final-cta-form {
-  display: flex; flex-direction: column; gap: 12px; max-width: 440px; margin: 0 auto 16px;
-}
-.final-cta-form input {
-  width: 100%; border: 1px solid #ddd; border-radius: 10px; outline: none;
-  font-size: 16px; font-family: inherit; background: #fff;
-  padding: 16px 20px;
-}
-.final-cta-form input:focus { border-color: var(--dark-green); }
-.final-cta-form button {
-  width: 100%; padding: 16px 28px; background: var(--dark-green); color: #fff;
-  border: none; border-radius: 28px; font-size: 16px; font-weight: 600;
-  cursor: pointer; font-family: inherit; transition: background 0.2s;
-}
-.final-cta-form button:hover { background: #1a2f25; }
-.final-cta .privacy-note { font-size: 13px; color: rgba(33,58,47,0.5); }
-
-/* ── Footer ── */
-.site-footer {
-  background: var(--dark-green); padding: 40px 48px;
-}
-.footer-inner {
-  max-width: 1100px; margin: 0 auto;
-}
-.footer-top {
-  display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;
-}
-.footer-logo { display: flex; align-items: center; gap: 10px; }
-.footer-logo img { height: 24px; }
-.footer-logo span { color: var(--text-light); font-size: 14px; font-weight: 600; }
-.footer-links { display: flex; gap: 28px; }
-.footer-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text-light); }
-.footer-bottom {
-  font-size: 13px; color: var(--text-muted); border-top: 1px solid rgba(245,242,232,0.1);
-  padding-top: 20px;
+.on-dark .ie{color:var(--gold);background-image:none}
+h1 .ie,h2 .ie,.creed q .ie{background-size:100% .14em;background-position:0 92%}
+.hl{
+  background-image:linear-gradient(var(--gold),var(--gold));
+  background-size:100% .15em;background-position:0 94%;background-repeat:no-repeat;
+  padding:0 .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
 
-/* ── Forms (Kit) ── */
-.kit-form-wrap {
-  background: var(--sage); border-radius: 12px; padding: 28px;
-  max-width: 420px;
-}
-.kit-form-wrap h3 {
-  color: #fff; font-size: 20px; font-weight: 700; margin-bottom: 16px; text-align: center; line-height: 1.3;
-}
-.kit-form-wrap .formkit-form { background: transparent !important; max-width: 100% !important; }
-.kit-form-wrap .formkit-input {
-  border: 1px solid #e3e3e3 !important; border-radius: 8px !important;
-  background: #fff !important; color: #000 !important;
-  padding: 14px 16px !important; width: 100% !important; margin-bottom: 10px !important;
-  font-size: 15px !important;
-}
-.kit-form-wrap .formkit-submit {
-  background-color: var(--gold) !important; color: var(--forest) !important;
-  border-radius: 24px !important; font-weight: 700 !important;
-  padding: 14px 24px !important; width: 100% !important;
-  border: none !important; cursor: pointer !important; font-size: 15px !important;
-}
-.kit-form-wrap .formkit-submit > span { padding: 14px 24px !important; }
-.kit-form-privacy { color: rgba(255,255,255,0.7); font-size: 12px; margin-top: 12px; text-align: center; }
+/* section label: number, rule, words */
+.label{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.label b{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--gold-deep)}
+.label i{height:1px;width:26px;flex:0 0 26px;background:var(--gold-deep);opacity:.55}
+.label span{font-size:11.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:var(--forest)}
+.label.center{justify-content:center}
+.on-dark .label b{color:var(--gold)}
+.on-dark .label i{background:rgba(252,199,89,.6);opacity:1}
+.on-dark .label span{color:var(--gold)}
 
-/* ── Responsive: Tablet ── */
-@media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
-  .hero-headline { font-size: 2.2rem; }
-  .hero-form { margin: 0 auto 14px; }
-  .hero-photo-wrap { max-width: 280px; margin: 0 auto; }
-  .hero-photo-caption { position: relative; bottom: auto; left: auto; transform: none; margin-top: 16px; white-space: normal; }
-  .about-inner { grid-template-columns: 1fr; text-align: center; }
-  .about-photo { max-width: 260px; margin: 0 auto; }
-  .about-content { text-align: left; }
-  .economy-cards { grid-template-columns: 1fr; }
-  .get-cards { grid-template-columns: 1fr; }
-  .pillar-cards { grid-template-columns: 1fr; }
-  .house-cards, .house-cards.three-col { grid-template-columns: 1fr; }
-  .tef-show-inner { grid-template-columns: 1fr; text-align: center; }
-  .tef-show-content { text-align: left; }
-  .service-pillars { grid-template-columns: 1fr; }
-  .service-closer { flex-direction: column; gap: 16px; }
+/* buttons */
+.btn{
+  display:inline-block;padding:15px 28px;border-radius:999px;text-decoration:none;
+  font-size:15px;font-weight:600;transition:transform .16s,background .2s,box-shadow .2s,color .2s;
+}
+.btn-dark{background:var(--dark-green);color:var(--cream);box-shadow:0 6px 18px rgba(33,58,47,.22)}
+.btn-dark:hover{background:var(--forest);transform:translateY(-2px);box-shadow:0 12px 26px rgba(33,58,47,.3)}
+.btn-gold{background:var(--gold);color:var(--dark-green);font-weight:700}
+.btn-gold:hover{background:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.28)}
+.btn-outline{border:1.5px solid rgba(33,58,47,.3);color:var(--dark-green)}
+.btn-outline:hover{background:var(--dark-green);color:var(--cream);transform:translateY(-2px)}
+.link-gold{
+  display:inline-block;color:var(--gold);text-decoration:none;font-weight:600;font-size:16px;
+  border-bottom:2px solid rgba(252,199,89,.35);padding-bottom:4px;transition:border-color .2s;
+}
+.link-gold:hover{border-color:var(--gold)}
+
+/* ===================== nav ===================== */
+nav{background:var(--dark-green);position:sticky;top:0;z-index:60}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:16px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:0 0 auto}
+.brand img{height:30px;width:auto}
+.brand span{color:var(--text-light);font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.nav-right{display:flex;align-items:center;gap:30px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text-light)}
+.nav-btn{
+  background:var(--cream);color:var(--dark-green);padding:11px 22px;border-radius:999px;
+  text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;
+  transition:transform .16s,background .2s;
+}
+.nav-btn:hover{background:var(--gold);transform:translateY(-1px)}
+.nav-toggle{
+  display:none;background:none;border:0;cursor:pointer;padding:8px;margin-right:-8px;
+}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--text-light);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav-toggle span+span{margin-top:5px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===================== hero ===================== */
+.hero{padding:86px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:72px;align-items:center}
+.hero h1{font-size:clamp(40px,5.2vw,68px);font-weight:800;margin:2px 0 26px}
+.hero-list{list-style:none;padding:4px 0 4px 22px;margin:0 0 26px;border-left:3px solid var(--gold)}
+.hero-list li{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,2vw,21px);
+  font-weight:600;color:var(--dark-green);line-height:1.55;letter-spacing:-.015em;
+}
+.lede{font-size:18.5px;line-height:1.62;color:var(--body);max-width:30em;margin-bottom:24px}
+.lede strong{color:var(--dark-green);font-weight:700}
+.topics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.topic{
+  font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--dark-green);
+  border:1px solid rgba(33,58,47,.22);padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.55);
+}
+.offer{
+  position:relative;padding:2px 0 2px 20px;margin:0 0 26px;max-width:31em;
+  font-size:16.5px;line-height:1.55;color:var(--body);
+}
+.offer::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:3px;background:var(--gold);border-radius:2px}
+.offer b{color:var(--dark-green);font-weight:700}
+
+/* signup form */
+form.sub{display:flex;gap:10px;flex-wrap:wrap;max-width:566px}
+form.sub input{
+  flex:1 1 168px;min-width:0;padding:16px 18px;border:1px solid rgba(33,58,47,.2);border-radius:12px;
+  font-family:inherit;font-size:16px;background:#fff;color:var(--text-dark);
+  box-shadow:0 1px 2px rgba(33,58,47,.05);transition:border-color .18s,box-shadow .18s;
+}
+form.sub input::placeholder{color:#6f7873}
+form.sub input:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(0,84,25,.12)}
+form.sub input:focus-visible{outline:none}
+form.sub button{
+  flex:0 0 auto;padding:16px 30px;border:0;border-radius:12px;cursor:pointer;
+  background:var(--dark-green);color:var(--cream);font-family:inherit;font-size:15.5px;font-weight:600;
+  box-shadow:0 6px 18px rgba(33,58,47,.22);transition:transform .16s,background .2s,box-shadow .2s;
+}
+form.sub button:hover{background:var(--forest);transform:translateY(-2px);box-shadow:0 10px 24px rgba(33,58,47,.28)}
+form.sub button[disabled]{opacity:.65;cursor:progress;transform:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-error{
+  margin-top:12px;font-size:14.5px;font-weight:500;color:#8c2f18;
+  background:rgba(140,47,24,.08);border-left:3px solid #8c2f18;padding:10px 14px;border-radius:0 8px 8px 0;
+}
+.form-error:empty{display:none}
+.microrow{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.readers{
+  display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(33,58,47,.26);
+  border-radius:999px;padding:6px 15px;font-size:13.5px;font-weight:600;color:var(--dark-green);
+}
+.readers i{width:7px;height:7px;border-radius:50%;background:var(--forest);display:block}
+.fine{font-size:13.5px;color:var(--muted-ink)}
+.on-dark form.sub input{border-color:rgba(245,242,232,.24);background:rgba(255,255,255,.07);color:var(--text-light);box-shadow:none}
+.on-dark form.sub input::placeholder{color:rgba(245,242,232,.62)}
+.on-dark form.sub input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(252,199,89,.18)}
+.on-dark form.sub button{background:var(--gold);color:var(--dark-green)}
+.on-dark form.sub button:hover{background:#fff}
+.on-dark .readers{border-color:rgba(245,242,232,.32);color:var(--text-light)}
+.on-dark .readers i{background:var(--gold)}
+.on-dark .fine{color:var(--text-muted)}
+.on-dark .form-error{color:#ffd9cf;background:rgba(255,120,90,.14);border-left-color:#ff8f70}
+
+/* portrait with offset gold plate */
+.portrait{position:relative;max-width:400px;margin-left:auto}
+.portrait::before{
+  content:"";position:absolute;inset:26px -22px -22px 26px;border:2px solid var(--gold);border-radius:20px;
+}
+.portrait picture{display:block}
+.portrait img{
+  position:relative;z-index:1;width:100%;height:auto;border-radius:20px;display:block;
+  box-shadow:0 24px 60px rgba(33,58,47,.2);
+}
+.portrait figcaption{
+  position:absolute;z-index:2;left:6%;right:6%;bottom:-26px;background:var(--dark-green);color:var(--text-light);
+  padding:15px 20px;border-radius:14px;text-align:center;font-size:14px;font-weight:500;line-height:1.45;
+  box-shadow:0 14px 34px rgba(33,58,47,.28);
 }
 
-/* ── Responsive: Mobile ── */
-@media (max-width: 600px) {
-  /* Navbar */
-  .navbar { padding: 12px 16px; position: relative; }
-  .navbar-logo img { height: 22px; }
-  .navbar-logo span { font-size: 13px; }
-  .navbar-toggle { display: block; }
-  .navbar-links {
-    position: absolute; top: 100%; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background-color: var(--dark-green);
-    padding: 8px 16px 16px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    max-height: 0; overflow: hidden; opacity: 0; visibility: hidden;
-    transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.25s;
+/* ===================== proof strip ===================== */
+.proof{background:var(--dark-green);color:var(--text-light);padding:54px 0;position:relative}
+.proof::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),rgba(252,199,89,0))}
+.proof .label{justify-content:center;margin-bottom:30px}
+.proof-row{margin-bottom:22px;text-align:center}
+.proof-row:last-child{margin-bottom:0}
+.proof-row-label{
+  display:block;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.proof-items{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 30px}
+.proof-items span{font-size:15px;font-weight:500;color:var(--text-light)}
+
+/* ===================== two economies (waterline) ===================== */
+.economies{padding:100px 0}
+.econ-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+.economies h2{font-size:clamp(30px,3.7vw,46px);font-weight:700;margin-bottom:26px;max-width:14em}
+.economies p{font-size:17.5px;line-height:1.75;color:var(--body);margin-bottom:20px;max-width:33em}
+.economies .beat{
+  font-family:'Playfair Display',serif;font-size:clamp(21px,2.3vw,28px);font-weight:600;
+  color:var(--dark-green);line-height:1.34;margin:24px 0;max-width:16em;letter-spacing:-.015em;
+}
+.economies .closer{font-size:17.5px;color:var(--dark-green);font-weight:600}
+.depth-wrap{position:sticky;top:calc(var(--nav-h) + 36px)}
+.depth{
+  display:grid;grid-template-rows:30fr 70fr;min-height:500px;border-radius:20px;overflow:hidden;
+  border:1px solid rgba(33,58,47,.13);box-shadow:0 26px 60px rgba(33,58,47,.16);
+}
+.depth-top{
+  background:rgba(97,148,131,.14);padding:26px 28px;border-bottom:3px dashed var(--gold);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.depth-bot{
+  background:linear-gradient(180deg,#274536 0%,#1A2E25 100%);padding:30px 28px;position:relative;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.depth-bot::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:54px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(252,199,89,.07),transparent);
+}
+.d-num{font-family:'Playfair Display',serif;font-size:clamp(38px,4vw,50px);font-weight:700;line-height:1;letter-spacing:-.03em}
+.d-name{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:11px 0 9px}
+.d-txt{font-size:14.5px;line-height:1.6}
+.depth-top .d-num{color:var(--sage-deep)}
+.depth-top .d-name{color:#3f5a4f}
+.depth-top .d-txt{color:#4a5952}
+.depth-bot .d-num,.depth-bot .d-name{color:var(--gold)}
+.depth-bot .d-txt{color:rgba(245,242,232,.82);position:relative}
+.depth-cap{margin-top:16px;font-size:13px;color:var(--muted-ink);text-align:center;line-height:1.5}
+
+/* ===================== about ===================== */
+.about{background:var(--tan);padding:100px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.about-figure{position:relative;display:block}
+.about-figure::before{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:10%;
+  width:82%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.72) 0%,rgba(255,255,255,.34) 54%,rgba(255,255,255,0) 74%);
+}
+.about-figure picture{display:block}
+.about-figure img{
+  position:relative;z-index:1;display:block;width:100%;height:auto;
+  -webkit-mask-image:linear-gradient(180deg,#000 78%,rgba(0,0,0,.35) 93%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 78%,rgba(0,0,0,.35) 93%,transparent 100%);
+}
+.byline{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.byline img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:0 0 52px;border:2px solid var(--gold)}
+.b-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--dark-green);line-height:1.2}
+.b-role{font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--muted-ink);margin-top:5px;line-height:1.45}
+.about h2{font-size:clamp(29px,3.5vw,44px);font-weight:700;margin-bottom:26px;max-width:15em}
+.about p{font-size:16.5px;line-height:1.8;color:var(--body);margin-bottom:17px;max-width:34em}
+.about p strong{color:var(--dark-green);font-weight:600}
+.about .btn{margin-top:14px}
+
+/* the line the brand rests on */
+.creed{max-width:940px;margin:88px auto 0;text-align:center;padding:0 16px}
+.creed .mark{width:44px;height:3px;background:var(--gold);border-radius:2px;margin:0 auto 30px}
+.creed q{
+  quotes:none;display:block;font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(26px,3.6vw,44px);font-weight:600;line-height:1.26;color:var(--dark-green);letter-spacing:-.02em;
+}
+
+/* ===================== what you get ===================== */
+.get{background:var(--dark-green);color:var(--text-light);padding:96px 0}
+.get .label{justify-content:center}
+.get-head{text-align:center;max-width:44em;margin:0 auto 54px}
+.get h2{font-size:clamp(30px,3.7vw,46px);font-weight:700;margin-bottom:18px}
+.get-head p{color:var(--text-muted);font-size:17px;line-height:1.65;max-width:34em;margin:0 auto}
+.get-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.get-card{
+  background:rgba(245,242,232,.06);border:1px solid rgba(245,242,232,.13);border-radius:16px;
+  padding:34px 28px;position:relative;overflow:hidden;
+}
+.get-card::after{
+  content:attr(data-n);position:absolute;top:14px;right:22px;
+  font-family:'Playfair Display',serif;font-size:62px;font-weight:700;color:rgba(245,242,232,.07);line-height:1;
+}
+.get-card-label{
+  font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+}
+.get-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:13px;line-height:1.2}
+.get-card p{font-size:14.5px;line-height:1.66;color:var(--text-muted)}
+
+/* ===================== pillars ===================== */
+.pillars{padding:98px 0}
+.pillars .label{justify-content:center}
+.pillars h2{font-size:clamp(29px,3.5vw,44px);font-weight:700;text-align:center;max-width:16em;margin:0 auto 50px}
+.pillar-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:44px}
+.pillar-card{
+  background:rgba(255,255,255,.6);border:1px solid var(--rule);border-radius:16px;padding:32px 28px;
+  transition:transform .2s,box-shadow .2s;
+}
+.pillar-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(33,58,47,.12)}
+.pillar-num{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+.pillar-card h3{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;color:var(--dark-green);margin-bottom:13px;line-height:1.24}
+.pillar-card p{font-size:14.5px;line-height:1.68;color:var(--body)}
+.pillars-closer{text-align:center;font-size:17.5px;color:var(--body)}
+.pillars-closer strong{color:var(--dark-green);font-weight:700}
+
+/* ===================== the show ===================== */
+.show{background:var(--dark-green);color:var(--text-light);padding:96px 0;position:relative}
+.show::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),rgba(252,199,89,0))}
+.show-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:62px;align-items:center}
+.show h2{font-size:clamp(30px,3.6vw,46px);font-weight:700;margin-bottom:20px}
+.show h2 em{font-style:italic;color:var(--gold)}
+.show p{color:var(--text-muted);font-size:17px;line-height:1.66;max-width:30em;margin-bottom:26px}
+.video{
+  position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.42);border:1px solid rgba(252,199,89,.22);background:#0d1b14;
+}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-facade{
+  position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;cursor:pointer;
+  background:none;display:block;
+}
+.video-facade img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,opacity .3s}
+.video-facade::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.35));
+}
+.video-play{
+  position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:76px;height:76px;border-radius:50%;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .22s;
+}
+.video-play::before{
+  content:"";border-style:solid;border-width:13px 0 13px 21px;
+  border-color:transparent transparent transparent var(--dark-green);margin-left:5px;
+}
+.video-facade:hover img{transform:scale(1.04)}
+.video-facade:hover .video-play{transform:translate(-50%,-50%) scale(1.08)}
+
+/* ===================== the house ===================== */
+.house{background:var(--tan);padding:96px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.house-grid{display:grid;grid-template-columns:.58fr 1.42fr;gap:66px;align-items:center}
+.cover-stage{perspective:1400px}
+.book-cover{
+  position:relative;aspect-ratio:2/3;border-radius:4px 10px 10px 4px;overflow:hidden;
+  background:linear-gradient(118deg,#1B3126 0%,#274437 52%,#1B3126 100%);
+  display:flex;flex-direction:column;justify-content:space-between;padding:34px 26px 28px 32px;
+  color:var(--text-light);transform:rotateY(-9deg);
+  box-shadow:-8px 22px 54px rgba(33,58,47,.4),inset 5px 0 12px rgba(0,0,0,.32);
+}
+.book-cover::after{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;
+  background:linear-gradient(90deg,rgba(0,0,0,.4),rgba(0,0,0,0))}
+.bc-top{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.bc-mid{font-family:'Playfair Display',serif;font-size:clamp(24px,2.9vw,34px);font-weight:700;line-height:1.08}
+.bc-mid span{display:block;width:38px;height:2px;background:var(--gold);margin-bottom:15px}
+.bc-bot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,242,232,.62)}
+.house h2{font-size:clamp(29px,3.5vw,44px);font-weight:700;margin-bottom:34px;max-width:14em}
+.shelf{list-style:none;display:grid;gap:14px}
+.shelf li{
+  display:grid;grid-template-columns:1fr auto;gap:10px 26px;align-items:center;
+  background:rgba(255,255,255,.62);border:1px solid var(--rule);border-radius:14px;padding:22px 26px;
+  transition:transform .2s,box-shadow .2s;
+}
+.shelf li:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(33,58,47,.12)}
+.shelf-label{font-size:10.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px}
+.shelf h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--dark-green);margin-bottom:7px;line-height:1.2}
+.shelf p{font-size:14.5px;line-height:1.6;color:var(--body);max-width:36em}
+.shelf .btn{white-space:nowrap;padding:13px 24px;font-size:14.5px}
+
+/* ===================== work with me ===================== */
+.work{padding:98px 0}
+.work .label{justify-content:center}
+.work h2{font-size:clamp(29px,3.5vw,44px);font-weight:700;text-align:center;margin-bottom:16px}
+.work-sub{text-align:center;font-size:17px;color:var(--body);max-width:36em;margin:0 auto 48px;line-height:1.65}
+.work-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:42px}
+.work-card{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:32px 28px}
+.work-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--forest);margin-bottom:12px}
+.work-card p{font-size:14.5px;line-height:1.7;color:var(--body)}
+.door{
+  max-width:720px;margin:0 auto;padding-top:30px;border-top:1px solid var(--rule);
+  font-size:16px;line-height:1.7;color:var(--body);text-align:center;
+}
+.door p{margin-bottom:22px}
+
+/* ===================== final CTA ===================== */
+.final{background:var(--dark-green);color:var(--text-light);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.final::before{
+  content:"";position:absolute;top:-40%;left:50%;transform:translateX(-50%);
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(252,199,89,.11),transparent 66%);
+}
+.final .label{justify-content:center}
+.final h2{font-size:clamp(33px,4.4vw,56px);font-weight:700;margin-bottom:20px}
+.final>.wrap>p{color:var(--text-muted);font-size:18px;max-width:30em;margin:0 auto 34px;line-height:1.6}
+.final form.sub{margin:0 auto;justify-content:center}
+.final .microrow{justify-content:center}
+.final .form-error{max-width:566px;margin-left:auto;margin-right:auto;text-align:left}
+
+/* ===================== footer ===================== */
+footer{background:#1A2E25;color:var(--text-muted);padding:54px 0 44px;font-size:14.5px}
+.foot-in{display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:26px}
+.foot-links a{color:var(--text-muted);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{
+  margin-top:32px;padding-top:24px;border-top:1px solid rgba(245,242,232,.12);font-size:13.5px;
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+}
+.foot-bottom a{color:var(--gold);text-decoration:none}
+
+/* ===================== success dialog ===================== */
+.overlay{
+  position:fixed;inset:0;z-index:200;display:none;
+  align-items:center;justify-content:center;padding:20px;
+  background:rgba(12,24,18,.66);backdrop-filter:blur(4px);
+}
+.overlay.active{display:flex}
+.modal{
+  background:var(--cream);border-radius:18px;padding:46px 40px 40px;text-align:center;
+  max-width:440px;width:100%;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.34);
+  animation:pop .35s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:none}}
+.modal-close{
+  position:absolute;top:12px;right:14px;background:none;border:0;font-size:26px;line-height:1;
+  color:var(--muted-ink);cursor:pointer;padding:6px 10px;border-radius:8px;transition:color .2s,background .2s;
+}
+.modal-close:hover{color:var(--dark-green);background:rgba(33,58,47,.07)}
+.modal-icon{
+  width:74px;height:74px;border-radius:50%;background:var(--gold);color:var(--dark-green);
+  display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 18px;
+}
+.modal h2{font-size:29px;font-weight:700;color:var(--dark-green);margin-bottom:12px}
+.modal p{font-size:15.5px;line-height:1.65;color:var(--body);margin-bottom:10px}
+.modal p strong{color:var(--dark-green)}
+.modal .hint{font-size:13.5px;color:var(--muted-ink);margin-top:16px;margin-bottom:0}
+
+/* ===================== motion ===================== */
+.js [data-reveal]{opacity:0;transform:translateY(20px)}
+.js [data-reveal].in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.22,.7,.3,1)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js [data-reveal]{opacity:1;transform:none}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+/* ===================== responsive ===================== */
+@media(max-width:960px){
+  :root{--nav-h:64px}
+  .wrap{padding:0 22px}
+  .hero-grid,.econ-grid,.about-grid,.show-grid,.house-grid{grid-template-columns:1fr;gap:52px}
+  .get-cards,.pillar-cards,.work-cards{grid-template-columns:1fr}
+  .depth-wrap{position:static;max-width:470px;margin:0 auto}
+  .depth{min-height:440px}
+  .hero{padding:44px 0 74px}
+  .portrait{margin:0 auto;max-width:360px}
+  .about-figure{max-width:380px;margin:0 auto}
+  .about-grid{gap:34px}
+  .book-cover{max-width:236px;transform:none}
+  .cover-stage{perspective:none;display:flex;justify-content:center}
+  .economies,.about,.get,.pillars,.show,.house,.work,.final{padding:66px 0}
+  .creed{margin-top:56px}
+  .shelf li{grid-template-columns:1fr}
+  .shelf .btn{justify-self:start}
+  .brand span{font-size:14px}
+  .nav-toggle{display:block}
+  .nav-right{gap:12px}
+  .nav-btn{padding:9px 17px;font-size:14px}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--dark-green);padding:4px 22px 18px;box-shadow:0 14px 26px rgba(0,0,0,.24);
+    max-height:0;overflow:hidden;opacity:0;visibility:hidden;
+    transition:max-height .3s ease,opacity .25s ease,visibility .25s;
   }
-  .navbar-links.open { max-height: 400px; opacity: 1; visibility: visible; }
-  .navbar-links a {
-    padding: 14px 4px; font-size: 15px; opacity: 1;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .navbar-links a:last-child { border-bottom: none; }
-  .navbar-right { gap: 12px; }
-  .navbar-cta { font-size: 12px; padding: 8px 16px; }
-
-  /* Hero */
-  .hero { padding: 36px 20px 32px; }
-  .hero-label { font-size: 11px; letter-spacing: 1.5px; margin-bottom: 14px; }
-  .hero-headline { font-size: 1.75rem; line-height: 1.2; margin-bottom: 16px; }
-  .hero-sub { font-size: 14px; margin-bottom: 24px; }
-  .hero-list { padding-left: 16px; margin-bottom: 22px; }
-  .hero-list li { font-size: 1.05rem; line-height: 1.6; }
-  .hero-form { flex-direction: column; max-width: 100%; }
-  .hero-form input { font-size: 16px; padding: 14px 16px; }
-  .hero-form button { width: 100%; padding: 16px; font-size: 16px; }
-  .hero-badge { font-size: 12px; }
-  .hero-privacy { font-size: 12px; }
-  .hero-photo-wrap { max-width: 240px; }
-  .hero-photo { border-radius: 10px; }
-  .hero-photo-caption { font-size: 13px; padding: 12px 20px; border-radius: 8px; }
-
-  /* Topics */
-  .topics-bar { padding: 28px 20px; }
-  .topics-label { font-size: 10px; }
-  .topic-tags { gap: 8px; }
-  .topic-tag { padding: 6px 14px; font-size: 13px; }
-  .topics-sub { font-size: 14px; }
-
-  /* Brands */
-  .brands-bar { padding: 28px 20px; }
-  .brands-row-items { gap: 8px 20px; }
-  .brands-bar .brands-label { font-size: 10px; }
-  .brands-row-label { font-size: 10px; }
-  .brand-name { font-size: 13px; }
-
-  /* Two Economies */
-  .two-economies { padding: 48px 20px; }
-  .two-economies h2 { font-size: 1.6rem; }
-  .two-economies-sub { font-size: 14px; margin-bottom: 28px; }
-  .economy-card { padding: 24px; }
-  .economy-card .stat { font-size: 2.8rem; }
-  .economy-card h3 { font-size: 15px; }
-  .economy-card p { font-size: 13px; }
-  .two-economies-bottom { font-size: 15px; }
-
-  /* About */
-  .about-section { padding: 48px 20px; }
-  .about-inner { gap: 32px; }
-  .about-photo { max-width: 220px; border-radius: 10px; }
-  .about-content h2 { font-size: 1.6rem; }
-  .about-content p { font-size: 14px; }
-  .about-content .drop-cap::first-letter { font-size: 2.8rem; }
-  .btn-outline { padding: 12px 24px; font-size: 14px; }
-
-  /* What You Get */
-  .what-you-get { padding: 48px 20px; }
-  .what-you-get h2 { font-size: 1.6rem; }
-  .wyg-sub { font-size: 14px; margin-bottom: 32px; }
-  .get-card { padding: 24px 20px; }
-  .get-card-number { font-size: 2.5rem; top: 20px; right: 20px; }
-  .get-card h3 { font-size: 16px; }
-  .get-card p { font-size: 13px; }
-
-  /* Pillars */
-  .pillars { padding: 48px 20px; }
-  .pillars h2 { font-size: 1.6rem; margin-bottom: 32px; }
-  .pillar-card { padding: 24px 20px; }
-  .pillar-card h3 { font-size: 1.2rem; }
-  .pillar-card p { font-size: 13px; }
-  .pillars-bottom { font-size: 14px; }
-
-  /* The House */
-  .the-house { padding: 48px 20px; }
-  .the-house h2 { font-size: 1.6rem; margin-bottom: 32px; }
-  .house-card { padding: 28px 24px; border-radius: 12px; }
-  .house-card h3 { font-size: 1.25rem; }
-  .house-card p { font-size: 13px; }
-  .btn-gold, .btn-dark { padding: 12px 24px; font-size: 13px; width: 100%; text-align: center; }
-
-  /* Work With Me */
-  .pricing { padding: 48px 20px; }
-  .pricing h2 { font-size: 1.6rem; }
-  .pricing-sub { font-size: 14px; margin-bottom: 32px; }
-  .service-pillar { padding: 24px 20px; }
-  .service-pillar h3 { font-size: 1.3rem; }
-  .service-pillar p { font-size: 13px; }
-  .service-closer span { font-size: 13px; text-align: center; }
-  .btn-outline-rounded { padding: 12px 24px; font-size: 13px; width: 100%; text-align: center; }
-
-  /* TEF Show */
-  .tef-show { padding: 48px 20px; }
-  .tef-show-inner { gap: 28px; }
-  .tef-show-content h2 { font-size: 1.6rem; }
-  .tef-show-content p { font-size: 14px; }
-
-  /* Final CTA */
-  .final-cta { padding: 48px 20px; }
-  .final-cta h2 { font-size: 1.7rem; }
-  .final-cta p { font-size: 14px; margin-bottom: 24px; }
-  .final-cta-form input { text-align: center; }
-  .final-cta .privacy-note { font-size: 12px; }
-
-  /* Footer */
-  .site-footer { padding: 28px 20px; }
-  .footer-top { flex-direction: column; gap: 20px; align-items: center; text-align: center; }
-  .footer-logo img { height: 20px; }
-  .footer-logo span { font-size: 13px; }
-  .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
-  .footer-links a { font-size: 13px; }
-  .footer-bottom { font-size: 12px; text-align: center; }
+  .nav-links.open{max-height:340px;opacity:1;visibility:visible}
+  .nav-links a{padding:15px 2px;font-size:15.5px;color:var(--text-light);border-bottom:1px solid rgba(245,242,232,.12)}
+  .nav-links a:last-child{border-bottom:0}
 }
+@media(max-width:620px){
+  .hero h1{font-size:clamp(31px,8.6vw,40px)}
+  .lede{font-size:16.5px}
+  form.sub{flex-direction:column}
+  form.sub input,form.sub button{flex:1 1 auto;width:100%}
+  .portrait figcaption{position:static;margin-top:16px;left:auto;right:auto}
+  .portrait::before{inset:18px -12px -12px 18px}
+  .get-card,.pillar-card,.work-card,.shelf li{padding:26px 22px}
+  .modal{padding:38px 26px 32px}
+  .modal h2{font-size:24px}
+  .foot-in,.foot-bottom{flex-direction:column;align-items:flex-start;text-align:left}
+  .creed q{font-size:clamp(22px,6.4vw,30px)}
+}
+@media(max-width:600px){ .brand span{display:none} }
 
-/* ── Responsive: Small phones (SE, etc.) ── */
-@media (max-width: 375px) {
-  .hero-headline { font-size: 1.55rem; }
-  .two-economies h2, .about-content h2, .what-you-get h2,
-  .pillars h2, .the-house h2, .pricing h2, .final-cta h2 { font-size: 1.4rem; }
-  .hero-photo-wrap { max-width: 200px; }
-  .economy-card .stat { font-size: 2.4rem; }
-  .get-card-number { font-size: 2rem; }
-  .brands-row-items { gap: 6px 14px; }
-  .brand-name { font-size: 12px; }
+@media print{
+  nav,.overlay,.video,.portrait::before,body::before{display:none!important}
+  body{background:#fff;color:#000}
+  .get,.show,.final,footer,.proof{background:#fff!important;color:#000!important}
 }
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <a href="#" class="navbar-logo">
-    <img src="./logo.png" alt="The Excellence Factory">
-    <span>The Excellence Factory</span>
-  </a>
-  <div class="navbar-right">
-    <div class="navbar-links" id="navbarLinks">
-      <a href="/posts">Letters</a>
-      <a href="#the-show">The Show</a>
-      <a href="#the-book">The Book</a>
-      <a href="#work-with-me">Work With Me</a>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/">
+      <img src="/logo.png" alt="" width="118" height="53">
+      <span>The Excellence Factory</span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links" id="nav-links">
+        <a href="/posts">Letters</a>
+        <a href="#the-show">The Show</a>
+        <a href="#the-book">The Book</a>
+        <a href="#work-with-me">Work With Me</a>
+      </div>
+      <a href="#join" class="nav-btn">Get The Letter</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <a href="#hero" class="navbar-cta">Get The Letter</a>
-    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbarLinks">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero" id="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-label">The Invisible Letter &middot; Free Every Sunday</div>
-      <h1 class="hero-headline">Most of what shapes your life is <span class="highlight">invisible.</span></h1>
+<main id="main">
+
+<!-- 01 ................................................... THE LETTER -->
+<header class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <div class="label"><b>01</b><i></i><span>The Invisible Letter · Free every Sunday</span></div>
+      <h1>Most of what shapes your life is <span class="hl">invisible</span>.</h1>
+
       <ul class="hero-list">
         <li>The opportunities you get.</li>
         <li>The communities you join.</li>
         <li>The brands you trust.</li>
         <li>The careers you build.</li>
       </ul>
-      <p class="hero-sub">Most people never see the systems behind them. <strong>Every Sunday, I help you see them &mdash; in five minutes or less.</strong></p>
-      <form class="hero-form" action="https://app.kit.com/forms/9540956/subscriptions" method="post" data-sv-form="9540956" data-uid="9e29a68d32" data-format="inline" data-version="5">
-        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name">
-        <input type="email" name="email_address" placeholder="Your best email" required>
+
+      <p class="lede">Most people never see the systems behind them. <strong>Every Sunday, I help you see them — in five minutes or less.</strong></p>
+
+      <div class="topics">
+        <span class="topic">Career</span>
+        <span class="topic">Higher Ed</span>
+        <span class="topic">Tech</span>
+      </div>
+
+      <p class="offer">One thread runs through all three: the <span class="ie">invisible economy</span> — how things actually work underneath what you're told. Subscribe and <b>The Framework Vault</b> unlocks instantly.</p>
+
+      <form class="sub" action="https://app.kit.com/forms/9540956/subscriptions" method="post" target="_blank">
+        <label class="sr-only" for="hero-name">First name</label>
+        <input id="hero-name" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name">
+        <label class="sr-only" for="hero-email">Your best email</label>
+        <input id="hero-email" type="email" name="email_address" placeholder="Your best email" autocomplete="email" inputmode="email" spellcheck="false" required>
+        <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
         <button type="submit">Join free &rarr;</button>
       </form>
-      <div class="hero-badge">500+ readers</div>
-      <p class="hero-privacy">Subscribe and unlock The Framework Vault instantly. Unsubscribe anytime.</p>
-    </div>
-    <div class="hero-photo-wrap">
-      <img src="./profile.jfif" alt="Dr. DéRecco Lynch" class="hero-photo">
-      <div class="hero-photo-caption">Higher ed &rarr; Big Tech &rarr; your inbox.<br>One lens, every week.</div>
-    </div>
-  </div>
-</section>
+      <p class="form-error" role="alert" data-error></p>
 
-<!-- Topics Bar -->
-<section class="topics-bar">
-  <div class="topics-bar-inner">
-    <div class="topics-label">What you'll read about</div>
-    <div class="topic-tags">
-      <span class="topic-tag">career</span>
-      <span class="topic-tag">higher ed</span>
-      <span class="topic-tag">tech</span>
-    </div>
-    <p class="topics-sub">One thread runs through all three: <strong>the invisible economy</strong> &mdash; how things actually work underneath what you're told.</p>
-  </div>
-</section>
-
-<!-- Brands Bar -->
-<section class="brands-bar">
-  <div class="brands-container">
-    <div class="brands-label">The Work Behind the Letter</div>
-    <div class="brands-row">
-      <span class="brands-row-label">Industry</span>
-      <div class="brands-row-items">
-        <span class="brand-name">Salesforce</span>
-        <span class="brand-name">Disney</span>
-        <span class="brand-name">Netflix</span>
-        <span class="brand-name">Apple</span>
-        <span class="brand-name">The White House</span>
+      <div class="microrow">
+        <span class="readers"><i aria-hidden="true"></i>500+ readers</span>
+        <span class="fine">Unsubscribe anytime.</span>
       </div>
     </div>
-    <div class="brands-row">
-      <span class="brands-row-label">Higher Education</span>
-      <div class="brands-row-items">
-        <span class="brand-name">Brown University</span>
-        <span class="brand-name">Lincoln University</span>
-        <span class="brand-name">University of Cincinnati</span>
-        <span class="brand-name">Marshall University</span>
-        <span class="brand-name">George Mason University</span>
-        <span class="brand-name">Arizona State University</span>
-        <span class="brand-name">Cal State Fullerton</span>
+
+    <figure class="portrait" data-reveal>
+      <picture>
+        <source srcset="/assets/profile-400.webp" type="image/webp">
+        <img src="/profile.jfif" alt="Dr. DéRecco Lynch" width="400" height="400" fetchpriority="high" decoding="async">
+      </picture>
+      <figcaption>Higher ed &rarr; Big Tech &rarr; your inbox.<br>One lens, every week.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ................................................. PROOF STRIP -->
+<section class="proof on-dark" aria-label="Where the work has happened">
+  <div class="wrap">
+    <div class="label"><i></i><span>The work behind the letter</span><i></i></div>
+    <div class="proof-row">
+      <span class="proof-row-label">Industry</span>
+      <div class="proof-items">
+        <span>Salesforce</span><span>Disney</span><span>Netflix</span><span>Apple</span><span>The White House</span>
+      </div>
+    </div>
+    <div class="proof-row">
+      <span class="proof-row-label">Higher Education</span>
+      <div class="proof-items">
+        <span>Brown University</span><span>Lincoln University</span><span>University of Cincinnati</span>
+        <span>Marshall University</span><span>George Mason University</span>
+        <span>Arizona State University</span><span>Cal State Fullerton</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Two Economies -->
-<section class="two-economies">
-  <div class="two-economies-inner">
-    <div class="section-label">The Thing No One Tells You</div>
-    <h2>There are two economies. You were only taught one.</h2>
-    <p class="two-economies-sub">The application. The credential. The interview. That's the visible economy, and it's maybe 30% of how outcomes actually get decided.</p>
-    <div class="economy-cards">
-      <div class="economy-card">
-        <div class="stat gold">30%</div>
-        <h3>The visible economy</h3>
-        <p>The posting, the resume, the org chart, the rules written down. The part everyone can see is the part everyone is already fighting over.</p>
-      </div>
-      <div class="economy-card">
-        <div class="stat green">70%</div>
-        <h3>The invisible economy</h3>
-        <p>The conversation before you were considered. The room where your name came up, or didn't. The relationships, the timing, and the unwritten rules that decide who gets the offer, the seat, the deal.</p>
-      </div>
+<!-- 02 ................................................ TWO ECONOMIES -->
+<section class="economies" id="two-economies" aria-labelledby="econ-h">
+  <div class="wrap econ-grid">
+    <div data-reveal>
+      <div class="label"><b>02</b><i></i><span>The thing no one tells you</span></div>
+      <h2 id="econ-h">There are two economies. You were only taught one.</h2>
+      <p>The application. The credential. The interview. That's the visible economy — and it's maybe 30% of how outcomes actually get decided.</p>
+      <p class="beat">The org chart almost never tells the whole story.</p>
+      <p>The rest is the conversation before you were considered. The room where your name came up, or didn't. The relationships, the timing, and the unwritten rules that decide who gets the offer, the seat, the deal.</p>
+      <p class="closer">The people who learn to see the system move differently. That is what this letter is about.</p>
     </div>
-    <p class="two-economies-bottom">The people who learn to see the system <strong>move differently.</strong> That is what this letter is about.</p>
-  </div>
-</section>
 
-<!-- About -->
-<section class="about-section">
-  <div class="about-inner">
-    <img src="./derecco-about.png" alt="Dr. DéRecco Lynch speaking" class="about-photo">
-    <div class="about-content">
-      <div class="section-label">A Bit About Me</div>
-      <h2>I didn't want a career. I wanted a <span class="highlight">genreless</span> one.</h2>
-      <p>I've led inside almost every kind of institution there is &mdash; HBCUs, the Ivy League, mid-sized privates, large public systems. I was never trying to climb one ladder. I was building what I call a genreless career: proof that you don't have to be typecast into a single lane, that the right person can earn a seat in any room they choose. So I went looking for the hardest room to test it in.</p>
-      <p>Salesforce. I didn't want to be a customer of that world &mdash; I wanted to see inside the matrix. Getting in took 20 interviews over 6 months, for a role where roughly 1 in 100 applicants is hired. I made it. But landing it isn't the part that changed my life.</p>
-      <p>The process did. Brown did. Somewhere in there I got access to what I call the invisible economy &mdash; and watched, at full scale, what relationships, timing, and a sharp set of skills can actually do for a person. Once you see it in one world, you can't unsee it in any of them.</p>
-      <p>So I never really left higher ed. I brought everything back. Today I do the work I find iconic: helping one person land the job they were told was out of reach, building enrollment, marketing, and brand strategy for institutions, and helping companies use technology to drive real change &mdash; right down to the teams who have to implement it. Career. Higher ed. Tech. The same hidden machinery underneath all three.</p>
-      <p>That's who I am, and that's what this letter is: what I learned the hard way, from inside all three worlds, written down so you don't lose ten years figuring it out.</p>
-      <a href="#final-cta" class="btn-outline">Start with the free letter &rarr;</a>
+    <div class="depth-wrap" data-reveal>
+      <div class="depth">
+        <div class="depth-top">
+          <div class="d-num">30%</div>
+          <div class="d-name">The visible economy</div>
+          <div class="d-txt">The posting, the resume, the org chart, the rules somebody wrote down. The part everyone can see is the part everyone is already fighting over.</div>
+        </div>
+        <div class="depth-bot">
+          <div class="d-num">70%</div>
+          <div class="d-name">The invisible economy</div>
+          <div class="d-txt">Relationships, trust, timing, your story, and the conversations that happen when you're not in the room.</div>
+        </div>
+      </div>
+      <p class="depth-cap">Most people put all their energy into the 30.</p>
     </div>
   </div>
 </section>
 
-<!-- What You Get -->
-<section class="what-you-get">
-  <div class="what-you-get-inner">
-    <div class="section-label" style="color: var(--gold);">What You Get the Moment You Subscribe</div>
-    <h2>A free letter every week, plus the framework vault.</h2>
-    <p class="wyg-sub">Subscribing doesn't just add you to a list. It hands you the Score and the frameworks I built to read the system and change my own trajectory.</p>
+<!-- 03 ..................................................... ABOUT -->
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="about-grid">
+      <figure class="about-figure" data-reveal>
+        <picture>
+          <source srcset="/assets/about-cutout.webp" type="image/webp">
+          <img src="/assets/about-cutout.png" alt="Dr. DéRecco Lynch speaking on stage" width="820" height="900" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <div data-reveal>
+        <div class="label"><b>03</b><i></i><span>So you know who is writing</span></div>
+
+        <div class="byline">
+          <picture>
+            <source srcset="/assets/profile-400.webp" type="image/webp">
+            <img src="/profile.jfif" alt="" width="52" height="52" loading="lazy" decoding="async">
+          </picture>
+          <div>
+            <div class="b-name">Dr. DéRecco Lynch</div>
+            <div class="b-role">Ed.D. · Asst. Vice Provost, University of Cincinnati · Formerly Salesforce</div>
+          </div>
+        </div>
+
+        <h2 id="about-h">I didn't want a career. I wanted a <span class="hl">genreless</span> one.</h2>
+
+        <p>I've led inside almost every kind of institution there is — HBCUs, the Ivy League, mid-sized privates, large public systems. I was never trying to climb one ladder. I was building what I call a genreless career: proof that you don't have to be typecast into a single lane, that the right person can earn a seat in any room they choose. So I went looking for the hardest room to test it in.</p>
+        <p>Salesforce. I didn't want to be a customer of that world — I wanted to see inside the matrix. Getting in took 20 interviews over 6 months, for a role where roughly 1 in 100 applicants is hired. I made it. But landing it isn't the part that changed my life.</p>
+        <p>The process did. Brown did. Somewhere in there I got access to what I call the <span class="ie">invisible economy</span> — and watched, at full scale, what relationships, timing, and a sharp set of skills can actually do for a person. Once you see it in one world, you can't unsee it in any of them.</p>
+        <p>So I never really left higher ed. I brought everything back. Today I do the work I find iconic: helping one person land the job they were told was out of reach, building enrollment, marketing, and brand strategy for institutions, and helping companies use technology to drive real change — right down to the teams who have to implement it. <strong>Career. Higher ed. Tech. The same hidden machinery underneath all three.</strong></p>
+        <p>That's who I am, and that's what this letter is: what I learned the hard way, from inside all three worlds, written down so you don't lose ten years figuring it out.</p>
+
+        <a href="#join" class="btn btn-outline">Start with the free letter &rarr;</a>
+      </div>
+    </div>
+
+    <div class="creed" data-reveal>
+      <div class="mark"></div>
+      <q>Merit gets you in the room. The <span class="ie">invisible economy</span> decides what happens once you're there.</q>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ................................................ WHAT YOU GET -->
+<section class="get on-dark" id="what-you-get" aria-labelledby="get-h">
+  <div class="wrap">
+    <div class="get-head" data-reveal>
+      <div class="label"><b>04</b><i></i><span>What you get the moment you subscribe</span></div>
+      <h2 id="get-h">A free letter every week, plus the Framework Vault.</h2>
+      <p>Subscribing doesn't just add you to a list. It hands you the Score and the frameworks I built to read the system and change my own trajectory.</p>
+    </div>
     <div class="get-cards">
-      <div class="get-card">
-        <span class="get-card-number">01</span>
-        <div class="get-card-label">Every Week, Free</div>
+      <article class="get-card" data-n="01" data-reveal>
+        <div class="get-card-label">Every week, free</div>
         <h3>The Invisible Letter</h3>
         <p>One email every Sunday morning. A story, a framework, or a clear read on how things actually work across career, higher ed, and tech. Always 5 minutes.</p>
-      </div>
-      <div class="get-card">
-        <span class="get-card-number">02</span>
-        <div class="get-card-label">Unlocks on Signup</div>
+      </article>
+      <article class="get-card" data-n="02" data-reveal>
+        <div class="get-card-label">Unlocks on signup</div>
         <h3>The Invisible Score</h3>
         <p>Your free 20-minute self-assessment. One number for how free you are today, and how far your current path sits from the life you'd design on purpose. The honest starting line.</p>
-      </div>
-      <div class="get-card">
-        <span class="get-card-number">03</span>
-        <div class="get-card-label">Inside the Vault</div>
+      </article>
+      <article class="get-card" data-n="03" data-reveal>
+        <div class="get-card-label">Inside the vault</div>
         <h3>The Framework Vault</h3>
-        <p>Every framework I've built across career, higher ed, and tech &mdash; the same tools I used to break in, advise institutions, and drive change. Yours the second you subscribe, and growing every week.</p>
-      </div>
+        <p>Every framework I've built across career, higher ed, and tech — the same tools I used to break in, advise institutions, and drive change. Yours the second you subscribe, and growing every week.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- Three Pillars -->
-<section class="pillars">
-  <div class="pillars-inner">
-    <div class="section-label">What Everything Here Is Built On</div>
-    <h2>Three pillars. One mission: access to the invisible economy.</h2>
+<!-- 05 ................................................... PILLARS -->
+<section class="pillars" id="pillars" aria-labelledby="pillars-h">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="label"><b>05</b><i></i><span>What everything here is built on</span></div>
+      <h2 id="pillars-h">Three pillars. One mission: access to the <span class="ie">invisible economy</span>.</h2>
+    </div>
     <div class="pillar-cards">
-      <div class="pillar-card">
-        <div class="pillar-num">01 &middot; Inspiration</div>
+      <article class="pillar-card" data-reveal>
+        <div class="pillar-num">01 · Inspiration</div>
         <h3>Proof the pivot is possible</h3>
         <p>Real stories of people who changed lanes and made it. Not motivation for its own sake. Evidence that the door you're staring at actually opens.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-num">02 &middot; Collaboration</div>
+      </article>
+      <article class="pillar-card" data-reveal>
+        <div class="pillar-num">02 · Collaboration</div>
         <h3>The rooms and relationships</h3>
         <p>The network is the invisible economy. Who's in the room, who vouches for you, who you build alongside. The letter pulls back the curtain on how those rooms work.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-num">03 &middot; Execution</div>
+      </article>
+      <article class="pillar-card" data-reveal>
+        <div class="pillar-num">03 · Execution</div>
         <h3>Frameworks you can run Monday</h3>
         <p>Specific, repeatable moves. The roadmap, the audit, the actual steps. Because inspiration without execution is just entertainment.</p>
-      </div>
+      </article>
     </div>
-    <p class="pillars-bottom">One brand. One mission. <strong>Access to the rooms most people never see.</strong></p>
+    <p class="pillars-closer" data-reveal>One brand. One mission. <strong>Access to the rooms most people never see.</strong></p>
   </div>
 </section>
 
-<!-- TEF Show -->
-<section class="tef-show" id="the-show">
-  <div class="tef-show-inner">
-    <div class="tef-show-thumb">
-      <iframe src="https://www.youtube.com/embed/_bfv66Ef_S8" title="The TEF Show" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; height:100%; border-radius:12px;"></iframe>
-    </div>
-    <div class="tef-show-content">
-      <div class="section-label">The TEF Show &middot; New Episodes on YouTube</div>
-      <h2>The conversations behind the letter</h2>
+<!-- 06 ................................................... THE SHOW -->
+<section class="show on-dark" id="the-show" aria-labelledby="show-h">
+  <div class="wrap show-grid">
+    <div data-reveal>
+      <div class="label"><b>06</b><i></i><span>The TEF Show · New episodes on YouTube</span></div>
+      <h2 id="show-h">The conversations behind <em>the letter</em>.</h2>
       <p>Each month I sit down with people who beat the invisible economy and got the offer, the seat, the deal. The show is where the full stories get told. The letter is where I hand you what to do with them.</p>
-      <a href="https://www.youtube.com/watch?v=_bfv66Ef_S8" class="btn-gold" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+      <a class="link-gold" href="https://www.youtube.com/@theexcellencefactory" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+    </div>
+    <div class="video" data-reveal>
+      <button class="video-facade" type="button" data-video="_bfv66Ef_S8">
+        <img src="https://i.ytimg.com/vi/_bfv66Ef_S8/maxresdefault.jpg"
+             onerror="this.src='https://i.ytimg.com/vi/_bfv66Ef_S8/hqdefault.jpg'"
+             alt="Play the latest episode of The TEF Show" width="1280" height="720" loading="lazy" decoding="async">
+        <span class="video-play" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- The House -->
-<section class="the-house" id="the-book">
-  <div class="the-house-inner">
-    <div class="section-label" style="color: var(--forest);">The Bigger World the Letter Opens Into</div>
-    <h2>The letter is the front door. Here's the house.</h2>
-    <div class="house-cards three-col">
-      <div class="house-card light">
-        <div class="house-card-label">Digital eBook</div>
-        <h3>The Invisible Interview</h3>
-        <p class="house-card-sub">Instant download</p>
-        <p>Read it tonight. The unspoken rules of advancing your career, delivered straight to any device.</p>
-        <a href="https://derecco.kit.com/products/the-invisible-interview-ebook" class="btn-dark" target="_blank" rel="noopener">Get the eBook &rarr;</a>
+<!-- 07 ................................................... THE HOUSE -->
+<section class="house" id="the-book" aria-labelledby="house-h">
+  <div class="wrap house-grid">
+    <!-- Swap this block for the real cover when you have it:
+         <img class="book-cover" src="/assets/invisible-interview-cover.jpg" alt="The Invisible Interview"> -->
+    <div class="cover-stage" data-reveal>
+      <div class="book-cover" role="img" aria-label="The Invisible Interview by Dr. DéRecco Lynch">
+        <div class="bc-top">Dr. DéRecco Lynch</div>
+        <div class="bc-mid"><span></span>The Invisible Interview</div>
+        <div class="bc-bot">The Excellence Factory</div>
       </div>
-      <div class="house-card light">
-        <div class="house-card-label">Physical Book</div>
-        <h3>The Invisible Interview</h3>
-        <p class="house-card-sub">Print edition</p>
-        <p>The same playbook in print &mdash; on your shelf and in your hands. Shipped via Amazon.</p>
-        <a href="https://a.co/d/01RVcZ9u" class="btn-dark" target="_blank" rel="noopener">Order on Amazon &rarr;</a>
-      </div>
-      <div class="house-card light">
-        <div class="house-card-label">Self-Paced Course</div>
-        <h3>The Interview Companion</h3>
-        <p class="house-card-sub">On demand</p>
-        <p>Go beyond the page. The frameworks as a course you run at your own speed, whenever you need them.</p>
-        <a href="https://app.theexcellencefactoryhq.com/" class="btn-outline" target="_blank" rel="noopener">Start the course &rarr;</a>
-      </div>
+    </div>
+    <div data-reveal>
+      <div class="label"><b>07</b><i></i><span>The bigger world the letter opens into</span></div>
+      <h2 id="house-h">The letter is the front door. Here's the house.</h2>
+      <ul class="shelf">
+        <li>
+          <div>
+            <div class="shelf-label">Digital eBook · Instant download</div>
+            <h3>The Invisible Interview</h3>
+            <p>Read it tonight. The unspoken rules of advancing your career, delivered straight to any device.</p>
+          </div>
+          <a class="btn btn-dark" href="https://derecco.kit.com/products/the-invisible-interview-ebook" target="_blank" rel="noopener">Get the eBook &rarr;</a>
+        </li>
+        <li>
+          <div>
+            <div class="shelf-label">Physical book · Print edition</div>
+            <h3>The Invisible Interview</h3>
+            <p>The same playbook in print — on your shelf and in your hands. Shipped via Amazon.</p>
+          </div>
+          <a class="btn btn-outline" href="https://a.co/d/01RVcZ9u" target="_blank" rel="noopener">Order on Amazon &rarr;</a>
+        </li>
+        <li>
+          <div>
+            <div class="shelf-label">Self-paced course · On demand</div>
+            <h3>The Interview Companion</h3>
+            <p>Go beyond the page. The frameworks as a course you run at your own speed, whenever you need them.</p>
+          </div>
+          <a class="btn btn-outline" href="https://app.theexcellencefactoryhq.com/" target="_blank" rel="noopener">Start the course &rarr;</a>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- Work With Me -->
-<section class="pricing" id="work-with-me">
-  <div class="pricing-inner">
-    <div class="section-label" style="color: var(--gold);">When You're Ready to Go Deeper</div>
-    <h2>You start free. You climb when it's time.</h2>
-    <p class="pricing-sub">Most people will only ever need the letter &mdash; and that's the point. When you want to go further, here's how we work together.</p>
-    <div class="service-pillars">
-      <div class="service-pillar">
+<!-- 08 ................................................ WORK WITH ME -->
+<section class="work" id="work-with-me" aria-labelledby="work-h">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="label"><b>08</b><i></i><span>When you're ready to go deeper</span></div>
+      <h2 id="work-h">You start free. You climb when it's time.</h2>
+      <p class="work-sub">Most people will only ever need the letter — and that's the point. When you want to go further, here's how we work together.</p>
+    </div>
+    <div class="work-cards">
+      <article class="work-card" data-reveal>
         <h3>Career</h3>
-        <p>Personal brand, positioning, and your Freedom Map. Break in, move up, or pivot &mdash; with a system instead of luck.</p>
-      </div>
-      <div class="service-pillar">
+        <p>Personal brand, positioning, and your Freedom Map. Break in, move up, or pivot — with a system instead of luck.</p>
+      </article>
+      <article class="work-card" data-reveal>
         <h3>Higher Ed</h3>
         <p>Enrollment strategy, marketing, and technology for institutions in transition. For VPs, Provosts, and Cabinets.</p>
-      </div>
-      <div class="service-pillar">
+      </article>
+      <article class="work-card" data-reveal>
         <h3>Tech</h3>
         <p>Implementation, roadmaps, and architecture. Turn the strategy into something that actually ships.</p>
-      </div>
+      </article>
     </div>
-    <div class="service-closer">
-      <span>No pressure, ever. The letter is the letter. This is just here when you're ready.</span>
-      <a href="https://cal.com/derecco-lynch-k93ean/your-next-with-dr.-lynch-lets-goo" class="btn-outline-rounded" target="_blank" rel="noopener">Tell me where you're stuck &rarr;</a>
+    <div class="door" data-reveal>
+      <p>Maybe you're not here for the newsletter. Maybe you're on a search committee, a cabinet, or a team that needs someone who can talk about this out loud. You're welcome here too — no pressure, ever. The letter is the letter. This is just here when you're ready.</p>
+      <a class="btn btn-outline" href="https://cal.com/derecco-lynch-k93ean/your-next-with-dr.-lynch-lets-goo" target="_blank" rel="noopener">Tell me where you're stuck &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- Final CTA -->
-<section class="final-cta" id="final-cta">
-  <div class="final-cta-inner">
-    <div class="section-label">One Email a Week. No Fluff.</div>
-    <h2>See the 70% everyone else misses.</h2>
-    <p>Join 500+ people reading The Invisible Letter. Unlock The Framework Vault the second you subscribe.</p>
-    <form class="final-cta-form" action="https://app.kit.com/forms/9540956/subscriptions" method="post" data-sv-form="9540956" data-uid="9e29a68d32" data-format="inline" data-version="5">
-      <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name">
-      <input type="email" name="email_address" placeholder="Your best email" required>
+<!-- 09 ................................................... JOIN -->
+<section class="final on-dark" id="join" aria-labelledby="join-h">
+  <div class="wrap">
+    <div class="label"><b>09</b><i></i><span>One email a week. No fluff.</span></div>
+    <h2 id="join-h">See the <span class="hl">70%</span> everyone else misses.</h2>
+    <p>Join 500+ people reading The Invisible Letter. Your Invisible Score and The Framework Vault unlock the second you confirm.</p>
+    <form class="sub" action="https://app.kit.com/forms/9540956/subscriptions" method="post" target="_blank">
+      <label class="sr-only" for="join-name">First name</label>
+      <input id="join-name" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name">
+      <label class="sr-only" for="join-email">Your best email</label>
+      <input id="join-email" type="email" name="email_address" placeholder="Your best email" autocomplete="email" inputmode="email" spellcheck="false" required>
+      <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
       <button type="submit">Join free &rarr;</button>
     </form>
-    <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+    <p class="form-error" role="alert" data-error></p>
+    <div class="microrow">
+      <span class="readers"><i aria-hidden="true"></i>500+ readers</span>
+      <span class="fine">We respect your privacy. Unsubscribe anytime.</span>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-logo">
-        <img src="./logo.png" alt="The Excellence Factory">
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <a class="brand" href="/">
+        <img src="/logo.png" alt="" width="118" height="53">
         <span>The Excellence Factory</span>
-      </div>
-      <div class="footer-links">
-        <a href="#hero">The Invisible Letter</a>
-        <a href="#the-show">The TEF Show</a>
+      </a>
+      <div class="foot-links">
+        <a href="/posts">Letters</a>
+        <a href="#the-show">The Show</a>
         <a href="#the-book">The Book</a>
         <a href="https://www.youtube.com/@theexcellencefactory" target="_blank" rel="noopener">YouTube</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/derecco" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2026 The Excellence Factory &middot; Dr. DéRecco Lynch &middot; Helping people design their version of freedom.
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> The Excellence Factory · Dr. DéRecco Lynch · Helping people design their version of freedom.</span>
+      <span>Speaking, advising, and consulting: <a href="https://cal.com/derecco-lynch-k93ean/your-next-with-dr.-lynch-lets-goo" target="_blank" rel="noopener">let's talk &rarr;</a></span>
     </div>
   </div>
 </footer>
 
-<!-- Success Popup -->
-<div class="success-overlay" id="successOverlay">
-  <div class="success-popup">
-    <button class="success-close" id="successClose">&times;</button>
-    <div class="success-icon">&#9993;</div>
-    <h2>Check your email!</h2>
-    <p>We just sent you a confirmation. Click the link inside to unlock <strong>The Invisible Score</strong> &mdash; your free 20-minute self-assessment that shows how free you are today &mdash; plus <strong>The Framework Vault</strong> and The Invisible Letter every Sunday.</p>
-    <p class="success-hint">Don't see it? Check your spam or promotions folder.</p>
+<!-- Success dialog -->
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-h" id="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-icon" aria-hidden="true">&#9993;</div>
+    <h2 id="modal-h" class="serif">Check your email</h2>
+    <p>We just sent you a confirmation. Click the link inside to unlock <strong>The Invisible Score</strong> — your free 20-minute self-assessment — plus <strong>The Framework Vault</strong> and The Invisible Letter every Sunday.</p>
+    <p class="hint">Don't see it? Check your spam or promotions folder.</p>
   </div>
 </div>
 
-<style>
-.success-overlay {
-  display: none; position: fixed; inset: 0; z-index: 9999;
-  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-  align-items: center; justify-content: center; padding: 20px;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://derecco.com/#derecco",
+      "name": "Dr. DéRecco Lynch",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Assistant Vice Provost",
+      "worksFor": { "@type": "CollegeOrUniversity", "name": "University of Cincinnati" },
+      "url": "https://derecco.com/",
+      "image": "https://derecco.com/assets/og-card.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/derecco",
+        "https://www.youtube.com/@theexcellencefactory"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://derecco.com/#website",
+      "url": "https://derecco.com/",
+      "name": "The Excellence Factory",
+      "description": "The Invisible Letter — a free weekly letter on the invisible economy across career, higher ed, and tech.",
+      "publisher": { "@id": "https://derecco.com/#derecco" }
+    },
+    {
+      "@type": "Book",
+      "name": "The Invisible Interview",
+      "author": { "@id": "https://derecco.com/#derecco" },
+      "url": "https://derecco.kit.com/products/the-invisible-interview-ebook",
+      "workExample": [
+        {
+          "@type": "Book",
+          "bookFormat": "https://schema.org/EBook",
+          "url": "https://derecco.kit.com/products/the-invisible-interview-ebook"
+        },
+        {
+          "@type": "Book",
+          "bookFormat": "https://schema.org/Hardcover",
+          "url": "https://a.co/d/01RVcZ9u"
+        }
+      ]
+    }
+  ]
 }
-.success-overlay.active { display: flex; animation: fadeIn 0.3s ease; }
-.success-popup {
-  background: #fff; border-radius: 16px; padding: 48px 40px; text-align: center;
-  max-width: 420px; width: 100%; position: relative;
-  box-shadow: 0 24px 48px rgba(0,0,0,0.2);
-  animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.success-close {
-  position: absolute; top: 16px; right: 20px; background: none; border: none;
-  font-size: 28px; color: #999; cursor: pointer; line-height: 1; padding: 0;
-  transition: color 0.2s;
-}
-.success-close:hover { color: #333; }
-.success-icon {
-  font-size: 48px; margin-bottom: 16px;
-  width: 80px; height: 80px; line-height: 80px;
-  background: var(--gold); border-radius: 50%;
-  display: inline-block; color: var(--dark-green);
-}
-.success-popup h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.8rem; color: var(--dark-green); margin-bottom: 12px;
-}
-.success-popup p {
-  font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 8px;
-}
-.success-popup .success-hint {
-  font-size: 13px; color: #999; margin-top: 16px; margin-bottom: 0;
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes popIn { from { opacity: 0; transform: scale(0.9) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-@media (max-width: 600px) {
-  .success-popup { padding: 36px 24px; }
-  .success-popup h2 { font-size: 1.5rem; }
-  .success-icon { width: 64px; height: 64px; line-height: 64px; font-size: 36px; }
-}
-</style>
-
-<script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
+</script>
 
 <script>
-(function() {
-  /* Mobile nav toggle */
-  var toggle = document.getElementById('navbarToggle');
-  var links = document.getElementById('navbarLinks');
+(function () {
+  var d = document;
+  d.documentElement.className += ' js';
+
+  /* current year in the footer */
+  var yr = d.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------------- mobile nav */
+  var toggle = d.getElementById('nav-toggle');
+  var links = d.getElementById('nav-links');
   if (toggle && links) {
-    function closeMenu() {
-      links.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-    toggle.addEventListener('click', function() {
-      var isOpen = links.classList.toggle('open');
-      toggle.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    var setNav = function (open) {
+      links.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    toggle.addEventListener('click', function () {
+      setNav(toggle.getAttribute('aria-expanded') !== 'true');
     });
-    links.addEventListener('click', function(e) {
-      if (e.target.tagName === 'A') closeMenu();
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') setNav(false);
+    });
+    d.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setNav(false);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 960) setNav(false);
     });
   }
-})();
 
-(function() {
-  var overlay = document.getElementById('successOverlay');
-  var closeBtn = document.getElementById('successClose');
+  /* ------------------------------------------------------ reveal on scroll */
+  var items = Array.prototype.slice.call(d.querySelectorAll('[data-reveal]'));
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    items.forEach(function (el) { io.observe(el); });
+  }
 
-  function showPopup() {
+  /* --------------------------------------------- YouTube click-to-load */
+  var facade = d.querySelector('.video-facade');
+  if (facade) {
+    facade.addEventListener('click', function () {
+      var f = d.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + facade.getAttribute('data-video') + '?autoplay=1&rel=0';
+      f.title = 'The TEF Show';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      facade.parentNode.replaceChild(f, facade);
+      f.focus();
+    });
+  }
+
+  /* ------------------------------------------------- success dialog */
+  var overlay = d.getElementById('overlay');
+  var modal = d.getElementById('modal');
+  var closeBtn = d.getElementById('modal-close');
+  var lastFocused = null;
+
+  function openModal(returnTo) {
+    lastFocused = returnTo || d.activeElement;
     overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    d.body.style.overflow = 'hidden';
+    closeBtn.focus();
   }
-
-  function hidePopup() {
+  function closeModal() {
     overlay.classList.remove('active');
-    document.body.style.overflow = '';
+    d.body.style.overflow = '';
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+    lastFocused = null;
   }
-
-  closeBtn.addEventListener('click', hidePopup);
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) hidePopup();
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+  d.addEventListener('keydown', function (e) {
+    if (!overlay.classList.contains('active')) return;
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    /* keep focus inside the dialog while it is open */
+    var f = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && d.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && d.activeElement === last) { e.preventDefault(); first.focus(); }
   });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') hidePopup();
-  });
 
-  document.querySelectorAll('form').forEach(function(form) {
-    form.addEventListener('submit', function(e) {
+  /* ------------------------------------------------------------ signup */
+  Array.prototype.forEach.call(d.querySelectorAll('form.sub'), function (form) {
+    var errEl = form.parentNode.querySelector('[data-error]');
+    var btn = form.querySelector('button');
+    var label = btn.textContent;
+
+    function fail(msg) {
+      if (errEl) errEl.textContent = msg;
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+    function done() {
+      if (errEl) errEl.textContent = '';
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = label;
+      openModal(btn);
+    }
+
+    form.addEventListener('submit', function (e) {
+      /* bots fill hidden fields; people don't */
+      var hp = form.querySelector('input[name="hp"]');
+      if (hp && hp.value) { e.preventDefault(); return; }
+
+      /* no fetch/FormData: let the browser post the form the old way */
+      if (!window.fetch || !window.FormData) return;
+
       e.preventDefault();
-      var emailInput = form.querySelector('input[type="email"], input[name="email_address"]');
-      if (!emailInput || !emailInput.value) return;
-      var nameInput = form.querySelector('input[name="fields[first_name]"]');
+      if (errEl) errEl.textContent = '';
+      btn.disabled = true;
+      btn.textContent = 'Joining…';
 
-      var formData = new FormData(form);
+      var data = new FormData(form);
+      data.delete('hp');
+
       fetch(form.action, {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      }).then(function() {
-        emailInput.value = '';
-        if (nameInput) nameInput.value = '';
-        showPopup();
-      }).catch(function() {
-        emailInput.value = '';
-        if (nameInput) nameInput.value = '';
-        showPopup();
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          /* a readable response means we can trust what it says */
+          if (!res.ok || body.status === 'error' || body.errors) {
+            fail((body.errors && body.errors[0]) || body.message ||
+                 'That address was rejected. Check it and try again.');
+          } else {
+            done();
+          }
+        });
+      }).catch(function () {
+        /* opaque/blocked response: the POST still went out, so treat it as sent */
+        done();
       });
     });
   });

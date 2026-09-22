@@ -26,19 +26,30 @@ const HEAD_STYLES = `
   --sage: #619483;
   --text-dark: #1a1a1a;
   --text-light: #F5F2E8;
-  --text-muted: rgba(245, 242, 232, 0.7);
+  --text-muted: rgba(245, 242, 232, 0.72);
+  --gold-deep: #8A5F10;
+  --body: #3a463f;
+  --muted-ink: #5c665f;
+  --rule: rgba(33,58,47,0.13);
+  --nav-h: 72px;
 }
 html { font-size: 16px; scroll-behavior: smooth; }
 body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); background-color: var(--cream); line-height: 1.6; }
-.navbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background-color: var(--dark-green); position: sticky; top: 0; z-index: 100; }
-.navbar-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.navbar-logo img { height: 28px; }
-.navbar-logo span { color: var(--text-light); font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
-.navbar-right { display: flex; align-items: center; gap: 32px; }
-.navbar-links { display: flex; align-items: center; gap: 32px; }
-.navbar-links a { color: var(--text-light); text-decoration: none; font-size: 14px; font-weight: 500; opacity: 0.85; transition: opacity 0.2s; }
-.navbar-links a:hover { opacity: 1; }
-.navbar-cta { background-color: var(--cream); color: #213A2F; opacity: 1; padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.skip { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--gold); color: var(--dark-green); padding: 12px 20px; border-radius: 0 0 10px 0; font-weight: 700; text-decoration: none; }
+.skip:focus { left: 0; }
+:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; border-radius: 4px; }
+.navbar :focus-visible, .site-footer :focus-visible { outline-color: var(--gold); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.navbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 34px; height: var(--nav-h); background-color: var(--dark-green); position: sticky; top: 0; z-index: 100; }
+.navbar-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; flex: 0 0 auto; }
+.navbar-logo img { height: 30px; width: auto; }
+.navbar-logo span { color: var(--text-light); font-size: 15px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; }
+.navbar-right { display: flex; align-items: center; gap: 30px; }
+.navbar-links { display: flex; align-items: center; gap: 30px; }
+.navbar-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+.navbar-links a:hover { color: var(--text-light); }
+.navbar-cta { background-color: var(--cream); color: #213A2F; padding: 11px 22px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: transform 0.16s, background 0.2s; }
+.navbar-cta:hover { background: var(--gold); transform: translateY(-1px); }
 .navbar-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; margin-left: 4px; }
 .navbar-toggle span { display: block; width: 22px; height: 2px; background-color: var(--text-light); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
 .navbar-toggle span + span { margin-top: 5px; }
@@ -47,8 +58,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .navbar-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .post-wrap { max-width: 720px; margin: 0 auto; padding: 80px 24px 60px; }
 .post-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--forest); margin-bottom: 16px; }
+.post-body { max-width: 100%; }
 .post-title { font-family: 'Playfair Display', Georgia, serif; font-size: 2.6rem; line-height: 1.2; font-weight: 700; color: var(--text-dark); margin-bottom: 18px; }
-.post-meta { font-size: 14px; color: #777; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.post-meta { font-size: 14px; color: var(--muted-ink); margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.08); }
 .post-body { font-size: 17px; line-height: 1.75; color: #222; }
 .post-body p { margin-bottom: 20px; }
 .post-body h1, .post-body h2, .post-body h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: var(--text-dark); margin: 36px 0 16px; line-height: 1.25; }
@@ -71,12 +83,16 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .post-cta-form { display: flex; flex-direction: column; gap: 12px; max-width: 380px; margin: 0 auto; }
 .post-cta-form input { padding: 14px 18px; border: 1px solid #ddd; border-radius: 10px; font-size: 15px; font-family: inherit; outline: none; background: #fff; }
 .post-cta-form button { padding: 14px 24px; background: var(--dark-green); color: #fff; border: none; border-radius: 24px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; }
+.post-cta-done { font-size: 16px; line-height: 1.6; color: var(--dark-green); max-width: 420px; margin: 0 auto; }
+.post-cta-done strong { font-weight: 700; }
+.post-cta-form input[aria-invalid="true"] { border-color: #8c2f18; }
+.post-cta-form button[disabled] { opacity: 0.65; cursor: progress; }
 .back-link { display: inline-block; margin-top: 32px; font-size: 14px; color: var(--forest); text-decoration: none; font-weight: 600; }
 .back-link:hover { text-decoration: underline; }
 .posts-grid { max-width: 960px; margin: 0 auto; padding: 80px 24px 60px; }
 .posts-header { text-align: center; margin-bottom: 48px; }
 .posts-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.6rem; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
-.posts-header p { font-size: 15px; color: #666; max-width: 480px; margin: 0 auto; }
+.posts-header p { font-size: 15px; color: var(--body); max-width: 480px; margin: 0 auto; }
 .posts-list { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 .post-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
 .post-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.14); }
@@ -93,15 +109,18 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 .footer-links { display: flex; gap: 28px; }
 .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
 .footer-bottom { font-size: 13px; color: var(--text-muted); border-top: 1px solid rgba(245,242,232,0.1); padding-top: 20px; }
-@media (max-width: 600px) {
-  .navbar { padding: 12px 16px; position: relative; }
+@media (max-width: 960px) {
+  :root { --nav-h: 64px; }
+  .navbar { padding: 0 22px; position: relative; }
   .navbar-toggle { display: block; }
   .navbar-right { gap: 12px; }
-  .navbar-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background-color: var(--dark-green); padding: 8px 16px 16px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.25s; }
-  .navbar-links.open { max-height: 400px; opacity: 1; visibility: visible; }
-  .navbar-links a { padding: 14px 4px; font-size: 15px; opacity: 1; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .navbar-cta { padding: 9px 17px; font-size: 14px; }
+  .navbar-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background-color: var(--dark-green); padding: 4px 22px 18px; box-shadow: 0 14px 26px rgba(0,0,0,0.24); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.25s; }
+  .navbar-links.open { max-height: 340px; opacity: 1; visibility: visible; }
+  .navbar-links a { padding: 15px 2px; font-size: 15.5px; color: var(--text-light); border-bottom: 1px solid rgba(245,242,232,0.12); }
   .navbar-links a:last-child { border-bottom: none; }
-  .navbar-cta { font-size: 12px; padding: 8px 16px; }
+}
+@media (max-width: 600px) {
   .post-wrap { padding: 40px 20px 40px; }
   .post-title { font-size: 1.8rem; }
   .post-body { font-size: 16px; }
@@ -117,7 +136,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; colo
 const NAVBAR = `
 <nav class="navbar">
   <a href="/" class="navbar-logo">
-    <img src="/logo.png" alt="The Excellence Factory">
+    <img src="/logo.png" alt="" width="118" height="53">
     <span>The Excellence Factory</span>
   </a>
   <div class="navbar-right">
@@ -127,8 +146,8 @@ const NAVBAR = `
       <a href="/#the-book">The Book</a>
       <a href="/#work-with-me">Work With Me</a>
     </div>
-    <a href="/#hero" class="navbar-cta">Get The Letter</a>
-    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbarLinks">
+    <a href="/#join" class="navbar-cta">Get The Letter</a>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menu" aria-expanded="false" aria-controls="navbarLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -146,12 +165,46 @@ const NAV_SCRIPT = `
     toggle.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-  links.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A') {
-      links.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
+  function close() {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  links.addEventListener('click', function(e) { if (e.target.tagName === 'A') close(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', function() { if (window.innerWidth > 960) close(); });
+})();
+(function() {
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+})();
+(function() {
+  var form = document.querySelector('.post-cta-form');
+  if (!form || !window.fetch || !window.FormData) return;
+  var btn = form.querySelector('button');
+  var label = btn.textContent;
+  function done() {
+    var note = document.createElement('p');
+    note.className = 'post-cta-done';
+    note.setAttribute('role', 'status');
+    note.innerHTML = '<strong>Check your email.</strong> Confirm the link we just sent and the next letter lands Sunday morning.';
+    form.parentNode.replaceChild(note, form);
+  }
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Joining...';
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function(res) {
+        return res.json().catch(function() { return {}; }).then(function(body) {
+          if (!res.ok || body.status === 'error' || body.errors) {
+            btn.disabled = false;
+            btn.textContent = label;
+            form.querySelector('input[type=email]').setAttribute('aria-invalid', 'true');
+          } else { done(); }
+        });
+      })
+      .catch(done);
   });
 })();
 </script>
@@ -162,17 +215,18 @@ const FOOTER = `
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-logo">
-        <img src="/logo.png" alt="The Excellence Factory" style="height:24px;">
+        <img src="/logo.png" alt="" width="118" height="53" style="height:24px;width:auto;">
         <span>The Excellence Factory</span>
       </div>
       <div class="footer-links">
-        <a href="/posts">The Invisible Letter</a>
-        <a href="https://www.youtube.com/@theexcellencefactory" target="_blank" rel="noopener">YouTube</a>
+        <a href="/posts">Letters</a>
+        <a href="/#the-show">The Show</a>
         <a href="/#the-book">The Book</a>
-        <a href="/#work-with-me">Work With Me</a>
+        <a href="https://www.youtube.com/@theexcellencefactory" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.linkedin.com/in/derecco" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 The Excellence Factory &middot; Dr. D&eacute;Recco Lynch &middot; Helping people design their version of freedom.</div>
+    <div class="footer-bottom">&copy; <span id="yr">2026</span> The Excellence Factory &middot; Dr. D&eacute;Recco Lynch &middot; Helping people design their version of freedom.</div>
   </div>
 </footer>
 `;
@@ -181,8 +235,11 @@ const SUBSCRIBE_CTA = `
 <div class="post-cta">
   <h3>Get The Invisible Letter every Sunday</h3>
   <p>Field notes on the invisible economy. Read in 5 minutes.</p>
-  <form class="post-cta-form" action="https://app.kit.com/forms/9540956/subscriptions" method="post" data-sv-form="9540956" data-uid="9e29a68d32" data-format="inline" data-version="5">
-    <input type="email" name="email_address" placeholder="Your best email" required>
+  <form class="post-cta-form" action="https://app.kit.com/forms/9540956/subscriptions" method="post" target="_blank">
+    <label class="sr-only" for="cta-name">First name</label>
+    <input id="cta-name" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name">
+    <label class="sr-only" for="cta-email">Your best email</label>
+    <input id="cta-email" type="email" name="email_address" placeholder="Your best email" autocomplete="email" inputmode="email" spellcheck="false" required>
     <button type="submit">Join free &rarr;</button>
   </form>
 </div>
@@ -198,7 +255,7 @@ function scrubKitContent(html) {
 function renderPost({ subject, content, publishedAt, slug, thumbnail }) {
   const title = escapeHtml(subject);
   const dateStr = formatDate(publishedAt);
-  const ogImage = thumbnail || 'https://derecco.com/profile.jfif';
+  const ogImage = thumbnail || 'https://derecco.com/assets/og-card.jpg';
   content = scrubKitContent(content);
   return `<!DOCTYPE html>
 <html lang="en">
@@ -211,17 +268,24 @@ function renderPost({ subject, content, publishedAt, slug, thumbnail }) {
 <meta property="og:description" content="By Dr. DéRecco Lynch.">
 <meta property="og:image" content="${escapeHtml(ogImage)}">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://derecco.com/posts/${escapeHtml(slug)}">
+<meta property="og:site_name" content="The Excellence Factory">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${escapeHtml(ogImage)}">
-<link rel="icon" type="image/jpeg" href="/profile.jfif">
-<link rel="shortcut icon" type="image/jpeg" href="/profile.jfif">
-<link rel="apple-touch-icon" href="/profile.jfif">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://derecco.com/posts/${escapeHtml(slug)}">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#213A2F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>${HEAD_STYLES}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 ${NAVBAR}
-<article class="post-wrap">
+<article class="post-wrap" id="main">
   <div class="post-eyebrow">The Invisible Letter</div>
   <h1 class="post-title">${title}</h1>
   ${dateStr ? `<div class="post-meta">${dateStr} &middot; Dr. D&eacute;Recco Lynch</div>` : ''}
@@ -231,7 +295,6 @@ ${NAVBAR}
 </article>
 ${FOOTER}
 ${NAV_SCRIPT}
-<script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
 </body>
 </html>`;
 }
@@ -254,7 +317,7 @@ function renderIndex({ posts }) {
     </a>`;
   }).join('\n');
 
-  const empty = `<p style="text-align:center; color:#777; font-size:15px;">No letters yet. The first one arrives Sunday morning.</p>`;
+  const empty = `<p style="text-align:center; color:var(--muted-ink); font-size:15px;">No letters yet. The first one arrives Sunday morning.</p>`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -264,17 +327,25 @@ function renderIndex({ posts }) {
 <title>The Invisible Letter &middot; All Letters</title>
 <meta name="description" content="Every Invisible Letter by Dr. DéRecco Lynch. Field notes on the invisible economy.">
 <meta property="og:title" content="The Invisible Letter · All Letters">
-<meta property="og:image" content="https://derecco.com/profile.jfif">
+<meta property="og:image" content="https://derecco.com/assets/og-card.jpg">
+<meta property="og:url" content="https://derecco.com/posts">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/jpeg" href="/profile.jfif">
-<link rel="shortcut icon" type="image/jpeg" href="/profile.jfif">
-<link rel="apple-touch-icon" href="/profile.jfif">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://derecco.com/assets/og-card.jpg">
+<link rel="canonical" href="https://derecco.com/posts">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#213A2F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>${HEAD_STYLES}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 ${NAVBAR}
-<section class="posts-grid">
+<section class="posts-grid" id="main">
   <div class="posts-header">
     <h1>The Invisible Letter</h1>
     <p>Field notes on the invisible economy — career, higher ed, and tech. Read in 5 minutes.</p>
@@ -292,14 +363,17 @@ function renderNotFound() {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>Letter not found &middot; The Invisible Letter</title>
 <style>${HEAD_STYLES}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 ${NAVBAR}
-<div class="post-wrap" style="text-align:center;">
+<div class="post-wrap" id="main" style="text-align:center;">
   <h1 class="post-title">Letter not found</h1>
-  <p style="color:#666; margin-bottom:24px;">This letter may have been moved or hasn't been published yet.</p>
+  <p style="color:var(--body); margin-bottom:24px;">This letter may have been moved or hasn't been published yet.</p>
   <a href="/posts" class="back-link">&larr; All letters</a>
 </div>
 ${FOOTER}
